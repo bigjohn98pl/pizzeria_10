@@ -1,6 +1,20 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
+
+class pizza{
+  string name;
+  string ingredients;
+  double price;
+  int size;
+};
+
+class drink{
+    string name;
+    double price;
+    int size;
+};
 
 int main()
 {
