@@ -5,7 +5,9 @@ This README would normally document whatever steps are necessary to get your app
 ### What is this repository for? ###
 
 * Quick summary
+	Jest to projekt pizzeri online, w której urzytownik może zamówić pizze i napoje, osobno lub w zestawach.
 * Version
+	v.1
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up? ###
