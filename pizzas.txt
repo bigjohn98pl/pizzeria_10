@@ -1,1 +1,4 @@
-margeritta 20.00 sos,ser,mozarella,oregano
+Margeritta 20.00 sos_pomidorowy,ser,mozarella,oregano
+Caoriciosa 23.00 szynka,pieczarki,sos_pomidorowy
+Kebab 23.00 kurczak_gyros,cebula,sos_Gyros
+Peperoni 25.00 salami,cebula,sos_pomidorowy
