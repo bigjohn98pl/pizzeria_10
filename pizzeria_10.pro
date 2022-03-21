@@ -4,7 +4,9 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        pizza.cpp
 
 HEADERS += \
-    header.hpp
+    header.hpp \
+    pizza.hpp

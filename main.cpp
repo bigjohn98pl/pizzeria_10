@@ -1,21 +1,5 @@
 #include "header.hpp"
-
-class pizza{
-public:
-    void set(string nam, double pri, string ing){
-        name = nam; price = pri;    ingredients = ing;
-    }
-    void print(){
-        cout << "nazwa: " << name << endl
-             << "cena: " << price << endl
-             << "skladniki: " << ingredients << endl;
-    }
-private:
-    string name;
-    double price;
-    string ingredients;
-    int size;
-};
+#include "pizza.hpp"
 
 class drink{
     string name;
@@ -32,9 +16,9 @@ void readPizzas(){
     fin.open("pizzas.txt");
 
     while (fin >> name >> price >> ingredients) {
-        p.set(name,price,ingredients);
+       pizza p(name,price,ingredients);
     }
-    p.print();
+    p.show();
     fin.close();
 
 }
