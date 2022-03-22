@@ -8,12 +8,13 @@ public:
     pizza();
     pizza(string& nam, double& pri, string& ing);
     ~pizza();
+    void set(string& nam, double& pri, string& ing);
     void show();
 private:
     string *name;
     double *price;
     string *ingredients;
-    int *size;
+    //int *size;
 };
 
 #endif // PIZZA_HPP

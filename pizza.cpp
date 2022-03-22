@@ -15,9 +15,14 @@ pizza::~pizza(){
     delete price;
     delete ingredients;
 }
+void pizza::set(string& nam, double& pri, string& ing){
+    name = &nam;
+    price = &pri;
+    ingredients = &ing;
+}
 void pizza::show(){
-    cout << "nazwa: " << name << endl
-         << "cena: " << price << endl
-         << "skladniki: " << ingredients << endl;
+    cout << "nazwa: " << *name << endl
+         << "cena: " << *price << endl
+         << "skladniki: " << *ingredients << endl;
 }
 

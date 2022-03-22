@@ -16,9 +16,9 @@ void readPizzas(){
     fin.open("pizzas.txt");
 
     while (fin >> name >> price >> ingredients) {
-       pizza p(name,price,ingredients);
+       p.set(name,price,ingredients);
+       p.show();
     }
-    p.show();
     fin.close();
 
 }
