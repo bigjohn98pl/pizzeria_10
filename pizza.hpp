@@ -6,15 +6,18 @@
 class pizza{
 public:
     pizza();
-    pizza(string& nam, double& pri, string& ing);
+    pizza(string& _name, double& _price, string& _ingredients);
     ~pizza();
-    void set(string& nam, double& pri, string& ing);
+    void set(string& _name, double& _price, string& _ingredients);
     void show();
+    friend void readPizzas();
 private:
     string *name;
     double *price;
     string *ingredients;
     //int *size;
 };
+
+void readPizzas();
 
 #endif // PIZZA_HPP
