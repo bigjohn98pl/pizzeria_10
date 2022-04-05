@@ -8,10 +8,9 @@ public:
     pizza();
     pizza(string& _name, double& _price, string& _ingredients);
     ~pizza();
-    void set(string& _name, double& _price, string& _ingredients);
+    void set(string _name, double _price, string _ingredients);
     double getPrice();
     void show();
-    friend void readPizzas();
 private:
     string *name;
     double *price;
@@ -19,6 +18,5 @@ private:
     //int *size;
 };
 
-void readPizzas();
 
 #endif // PIZZA_HPP

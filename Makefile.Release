@@ -123,7 +123,9 @@ release/drink.o: drink.cpp drink.hpp \
 
 release/main.o: main.cpp header.hpp \
 		pizza.hpp \
-		drink.hpp
+		drink.hpp \
+		meal.hpp \
+		menu.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
 
 release/meal.o: meal.cpp meal.hpp \
@@ -135,7 +137,8 @@ release/meal.o: meal.cpp meal.hpp \
 release/menu.o: menu.cpp menu.hpp \
 		header.hpp \
 		pizza.hpp \
-		drink.hpp
+		drink.hpp \
+		meal.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\menu.o menu.cpp
 
 release/pizza.o: pizza.cpp pizza.hpp \

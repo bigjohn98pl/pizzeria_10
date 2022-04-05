@@ -123,7 +123,9 @@ debug/drink.o: drink.cpp drink.hpp \
 
 debug/main.o: main.cpp header.hpp \
 		pizza.hpp \
-		drink.hpp
+		drink.hpp \
+		meal.hpp \
+		menu.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o main.cpp
 
 debug/meal.o: meal.cpp meal.hpp \
@@ -135,7 +137,8 @@ debug/meal.o: meal.cpp meal.hpp \
 debug/menu.o: menu.cpp menu.hpp \
 		header.hpp \
 		pizza.hpp \
-		drink.hpp
+		drink.hpp \
+		meal.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\menu.o menu.cpp
 
 debug/pizza.o: pizza.cpp pizza.hpp \

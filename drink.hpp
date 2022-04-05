@@ -14,10 +14,8 @@ public:
     drink(string& _name,double& _price, string& _size);
     void show();
     double getPrice();
+    drink set(string& _name,double& _price, string& _size);
     ~drink();
-
-    friend void readDrinks();
 };
 
-void readDrinks();
 #endif // DRINK_HPP

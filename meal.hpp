@@ -1,7 +1,6 @@
 #ifndef MEAL_HPP
 #define MEAL_HPP
 
-#include "header.hpp"
 #include "pizza.hpp"
 #include "drink.hpp"
 

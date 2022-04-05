@@ -18,7 +18,7 @@ pizza::~pizza(){
     delete price;
     delete ingredients;
 }
-void pizza::set(string& _name, double& _price, string& _ingredients){
+void pizza::set(string _name, double _price, string _ingredients){
     *name = _name;
     *price = _price;
     *ingredients = _ingredients;
@@ -30,18 +30,4 @@ void pizza::show(){
     cout << "nazwa: " << *name << endl
          << "cena: " << *price << endl
          << "skladniki: " << *ingredients << endl << endl;
-}
-void readPizzas(){
-
-    string name,ingredients;
-    double price;
-    fstream  fin;
-    fin.open("pizzas.txt");
-
-    while (fin >> name >> price >> ingredients) {
-       pizza p(name,price,ingredients);
-       p.show();
-    }
-    fin.close();
-
 }

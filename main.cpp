@@ -1,11 +1,9 @@
 #include "header.hpp"
-#include "pizza.hpp"
-#include "drink.hpp"
+#include "menu.hpp"
 
 int main()
 {
     cout << "Witamy w naszej Pizzeri!" << endl;
-    readPizzas();
-    readDrinks();
+    menu _Menu;
     return 0;
 }
