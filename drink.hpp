@@ -13,6 +13,7 @@ public:
     drink();
     drink(string& _name,double& _price, string& _size);
     void show();
+    double getPrice();
     ~drink();
 
     friend void readDrinks();

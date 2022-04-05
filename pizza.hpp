@@ -9,6 +9,7 @@ public:
     pizza(string& _name, double& _price, string& _ingredients);
     ~pizza();
     void set(string& _name, double& _price, string& _ingredients);
+    double getPrice();
     void show();
     friend void readPizzas();
 private:

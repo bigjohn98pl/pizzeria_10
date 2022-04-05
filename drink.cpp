@@ -20,6 +20,9 @@ drink::~drink(){
     delete price;
     delete size;
 }
+double drink::getPrice(){
+    return *price;
+}
 void drink::show(){
     cout << "nazwa: " << *name << endl
          << "cena: " << *price << endl

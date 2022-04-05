@@ -23,12 +23,14 @@ void pizza::set(string& _name, double& _price, string& _ingredients){
     *price = _price;
     *ingredients = _ingredients;
 }
+double pizza::getPrice(){
+    return *price;
+}
 void pizza::show(){
     cout << "nazwa: " << *name << endl
          << "cena: " << *price << endl
          << "skladniki: " << *ingredients << endl << endl;
 }
-
 void readPizzas(){
 
     string name,ingredients;

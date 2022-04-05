@@ -6,11 +6,13 @@ CONFIG -= qt
 SOURCES += \
         drink.cpp \
         main.cpp \
+        meal.cpp \
         menu.cpp \
         pizza.cpp
 
 HEADERS += \
     drink.hpp \
     header.hpp \
+    meal.hpp \
     menu.hpp \
     pizza.hpp
