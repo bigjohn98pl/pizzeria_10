@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        card.cpp \
         drink.cpp \
         main.cpp \
         meal.cpp \
@@ -11,6 +12,7 @@ SOURCES += \
         pizza.cpp
 
 HEADERS += \
+    card.hpp \
     drink.hpp \
     header.hpp \
     meal.hpp \
