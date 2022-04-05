@@ -4,14 +4,14 @@
 #include "header.hpp"
 #include "pizza.hpp"
 #include "drink.hpp"
-#include "meal.hpp"
+//#include "meal.hpp"
 
 class menu
 {
 private:
     list<pizza> pizzas;
     list<drink> drinks;
-    list<meal> meals;
+   // list<meal> meals;
 public:
     menu();
 };

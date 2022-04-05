@@ -18,4 +18,5 @@ public:
     friend void readDrinks();
 };
 
+void readDrinks();
 #endif // DRINK_HPP
