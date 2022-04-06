@@ -8,9 +8,9 @@
 class menu
 {
 private:
-    list<pizza*> pizzas;
-    list<drink*> drinks;
-    list<meal*> meals;
+    vector<pizza*> pizzas;
+    vector<drink*> drinks;
+    vector<meal*> meals;
     card* shopingCard;
 public:
     menu();
@@ -19,6 +19,9 @@ public:
     void addMeal(meal _meal);
     void readDrinks();
     void readPizzas();
+    void showPizzas();
+    void showDrinks();
+    void showMeals();
     void showMenu();
 };
 

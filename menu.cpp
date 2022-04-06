@@ -42,7 +42,21 @@ void menu::readDrinks(){
     fin.close();
 
 }
-
+void menu::showPizzas(){
+    for(unsigned int i=0; i < pizzas.size();i++){
+        pizzas[i]->show();
+    }
+}
+void menu::showDrinks(){
+    for (unsigned int i = 0; i < drinks.size() ; i++ ) {
+        drinks[i]->show();
+    }
+}
+void menu::showMeals(){
+    for (unsigned int i = 0; i < meals.size() ; i++ ) {
+        meals[i]->show();
+    }
+}
 void menu::showMenu(){
     unsigned int clientChoose = 0;
     bool shoudShopping = true;
@@ -62,13 +76,13 @@ void menu::showMenu(){
 
         switch (clientChoose){
         case 1:
-            this->pizzas.showPizzas();
+            this->showPizzas();
             break;
         case 2:
-            this->drinks.showDrinks();
+            this->showDrinks();
             break;
         case 3:
-            this->meals.showMeals();
+            this->showMeals();
             break;
         case 4:
             shopingCard->showCard();
