@@ -2,15 +2,17 @@
 #define CARD_HPP
 
 #include "header.hpp"
-#include "menu.hpp"
+#include "pizza.hpp"
+#include "drink.hpp"
+#include "meal.hpp"
 
 class card
 {
 private:
     double price;
-    list<pizza*> cardPizzas;
-    list<drink*> cardDrinks;
-    list<meal*> cardMeals;
+    vector<pizza*> cardPizzas;
+    vector<drink*> cardDrinks;
+    vector<meal*> cardMeals;
 public:
     card();
 
