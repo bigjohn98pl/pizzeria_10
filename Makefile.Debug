@@ -137,7 +137,8 @@ debug/main.o: main.cpp header.hpp \
 		menu.hpp \
 		meal.hpp \
 		pizza.hpp \
-		drink.hpp
+		drink.hpp \
+		card.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o main.cpp
 
 debug/meal.o: meal.cpp meal.hpp \

@@ -137,7 +137,8 @@ release/main.o: main.cpp header.hpp \
 		menu.hpp \
 		meal.hpp \
 		pizza.hpp \
-		drink.hpp
+		drink.hpp \
+		card.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
 
 release/meal.o: meal.cpp meal.hpp \
