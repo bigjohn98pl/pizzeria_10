@@ -6,16 +6,16 @@
 
 class meal
 {
-    vector<pizza> pizzas;
-    vector<drink> drinks;
-    double* price;
+    vector<pizza*> pizzas;
+    vector<drink*> drinks;
+    double price;
 private:
 
 public:
     meal();
     ~meal();
-    void addPizza(pizza _pizza);
-    void addDrink(drink _drink);
+    void addPizza(pizza *_pizza);
+    void addDrink(drink *_drink);
     void show();
     double getPrice();
 };

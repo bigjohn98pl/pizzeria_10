@@ -2,32 +2,38 @@
 
 meal::meal()
 {
-    price = new double;
+    pizzas.clear();
+    drinks.clear();
+    //price = new double;
     price = 0;
 }
 meal::~meal()
 {
-    delete price;
+    //delete price;
 }
-void meal::addPizza(pizza _pizza){
-    pizzas.push_back(_pizza);
-    *price += _pizza.getPrice();
+void meal::addPizza(pizza *_pizza){
+    this->pizzas.push_back(_pizza);
+    price += _pizza->getPrice();
 }
-void meal::addDrink(drink _drink){
-    drinks.push_back(_drink);
-    *price += _drink.getPrice();
+void meal::addDrink(drink *_drink){
+    this->drinks.push_back(_drink);
+    price += _drink->getPrice();
 }
 double meal::getPrice(){
-    return *this->price;
+    return this->price;
 }
 void meal::show(){
-    cout << "()()()()()()()()()()()()Pizzas()()()()()()()()()()()()()()" << endl;
+    cout << setw(70) << "================================= Pizze =============================" << endl;
+    cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(INGREDIENTS) << "skladniki"  << endl << endl;
     for (unsigned int i = 0;i < this->pizzas.size() ; i++ ) {
-        this->pizzas[i].show();
+        this->pizzas[i]->show();
     }
-    cout << "-------------------------Drinks---------------------------" << endl;
+    cout << setw(70) << "================================= Napoje ============================" << endl;
+    cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(15) << "rozmiar"  << endl << endl;
     for (unsigned int i = 0;i < this->drinks.size() ; i++ ) {
-        this->drinks[i].show();
+        this->drinks[i]->show();
     }
-    cout << "()()()()()()()()()()()()()()()()()()()()()()()()()()" << endl;
+    cout << setw(70) << "|--------------------------- Cena-----------------------------|" << endl;
+    cout << setw(30) << getPrice() << endl;
+    cout << setw(70) << "|-------------------------------------------------------------|" << endl;
 }
