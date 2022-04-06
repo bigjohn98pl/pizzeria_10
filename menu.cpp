@@ -26,12 +26,15 @@ menu::menu()
 void menu::addPizza(pizza _pizza){
     this->pizzas.push_back(new pizza(_pizza));
 }
+
 void menu::addDrink(drink _drink){
     this->drinks.push_back(new drink(_drink));
 }
+
 void menu::addMeal(meal _meal){
     this->meals.push_back(new meal(_meal));
 }
+
 void menu::readPizzas(){
 
     string name,ingredients;
@@ -41,10 +44,8 @@ void menu::readPizzas(){
 
     while (fin >> name >> price >> ingredients) {
         pizzas.push_back(new pizza(name,price,ingredients));
-
     }
     fin.close();
-
 }
 
 void menu::readDrinks(){
@@ -58,7 +59,6 @@ void menu::readDrinks(){
         drinks.push_back(new drink(name,price,size));
     }
     fin.close();
-
 }
 void menu::showPizzas(){
     cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(INGREDIENTS) << "skladniki"  << endl;
@@ -73,9 +73,7 @@ void menu::showDrinks(){
     }
 }
 void menu::showMeals(){
-    //cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(15) << "rozmiar"  << endl;
     for (unsigned int i = 0; i < meals.size() ; i++ ) {
-       // cout << setw(30) << "|#####-------------------------"<< i <<"-----------------------#####|" << endl;
         meals[i]->show();
     }
 }

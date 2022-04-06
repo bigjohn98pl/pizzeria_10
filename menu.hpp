@@ -5,14 +5,17 @@
 #include "meal.hpp"
 #include "card.hpp"
 
-class menu
-{
+class menu{
+
 private:
+
     vector<pizza*> pizzas;
     vector<drink*> drinks;
     vector<meal*> meals;
     card* shopingCard;
+
 public:
+
     menu();
     void addPizza(pizza _pizza);
     void addDrink(drink _drink);

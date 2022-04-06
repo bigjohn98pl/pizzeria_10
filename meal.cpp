@@ -4,12 +4,10 @@ meal::meal()
 {
     pizzas.clear();
     drinks.clear();
-    //price = new double;
     price = 0;
 }
 meal::~meal()
 {
-    //delete price;
 }
 void meal::addPizza(pizza *_pizza){
     this->pizzas.push_back(_pizza);

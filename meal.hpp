@@ -4,14 +4,16 @@
 #include "pizza.hpp"
 #include "drink.hpp"
 
-class meal
-{
+class meal{
+
     vector<pizza*> pizzas;
     vector<drink*> drinks;
     double price;
+
 private:
 
 public:
+
     meal();
     ~meal();
     void addPizza(pizza *_pizza);

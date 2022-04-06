@@ -6,13 +6,15 @@
 #include "drink.hpp"
 #include "meal.hpp"
 
-class card
-{
+class card{
+
 private:
+
     double price;
     vector<pizza*> cardPizzas;
     vector<drink*> cardDrinks;
     vector<meal*> cardMeals;
+
 public:
     card();
 

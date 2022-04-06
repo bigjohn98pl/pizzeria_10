@@ -3,13 +3,16 @@
 
 #include "header.hpp"
 
-class drink
-{
+class drink{
+
 private:
+
     string* name;
     double* price;
     string* size;
+
 public:
+
     drink();
     drink(string& _name,double& _price, string& _size);
     void show();
