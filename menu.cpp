@@ -48,6 +48,7 @@ void menu::showMenu(){
     bool shoudShopping = true;
 
     while(shoudShopping){
+
         cout << "--------------------------------------------\n";
         cout << "Witamy w naszej Pizzeri!" << endl;
         cout << "--------------------------------------------\n";
@@ -56,16 +57,18 @@ void menu::showMenu(){
         cout << "3. Lista zestawów" << endl;
         cout << "4. Koszyk" << endl;
         cout << "5. Wyjdz" << endl;
+
         cin >> clientChoose;
+
         switch (clientChoose){
         case 1:
-
+            this->pizzas.showPizzas();
             break;
         case 2:
-
+            this->drinks.showDrinks();
             break;
         case 3:
-
+            this->meals.showMeals();
             break;
         case 4:
             shopingCard->showCard();
