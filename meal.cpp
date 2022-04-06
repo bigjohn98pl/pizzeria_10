@@ -17,3 +17,17 @@ void meal::addDrink(drink _drink){
     drinks.push_back(_drink);
     *price += _drink.getPrice();
 }
+double meal::getPrice(){
+    return *this->price;
+}
+void meal::show(){
+    cout << "()()()()()()()()()()()()Pizzas()()()()()()()()()()()()()()" << endl;
+    for (unsigned int i = 0;i < this->pizzas.size() ; i++ ) {
+        this->pizzas[i].show();
+    }
+    cout << "-------------------------Drinks---------------------------" << endl;
+    for (unsigned int i = 0;i < this->drinks.size() ; i++ ) {
+        this->drinks[i].show();
+    }
+    cout << "()()()()()()()()()()()()()()()()()()()()()()()()()()" << endl;
+}

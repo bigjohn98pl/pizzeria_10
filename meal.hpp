@@ -6,8 +6,8 @@
 
 class meal
 {
-    list<pizza> pizzas;
-    list<drink> drinks;
+    vector<pizza> pizzas;
+    vector<drink> drinks;
     double* price;
 private:
 
@@ -16,6 +16,8 @@ public:
     ~meal();
     void addPizza(pizza _pizza);
     void addDrink(drink _drink);
+    void show();
+    double getPrice();
 };
 
 #endif // MEAL_HPP
