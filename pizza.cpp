@@ -27,7 +27,5 @@ double pizza::getPrice(){
     return *price;
 }
 void pizza::show(){
-    cout << "nazwa: " << *name << endl
-         << "cena: " << *price << endl
-         << "skladniki: " << *ingredients << endl << endl;
+    cout << setw(15) << *name << setw(15) << *price << setw(INGREDIENTS) << *ingredients << endl;
 }
