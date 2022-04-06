@@ -4,15 +4,33 @@ menu::menu()
 {
     readPizzas();
     readDrinks();
+    meal mealOne,mealTwo,mealTree;
+    mealOne.addPizza(pizzas[1]);
+    mealOne.addPizza(pizzas[3]);
+    mealOne.addDrink(drinks[0]);
+
+    mealTwo.addPizza(pizzas[1]);
+    mealTwo.addDrink(drinks[0]);
+    mealTwo.addDrink(drinks[0]);
+
+    mealTree.addPizza(pizzas[2]);
+    mealTree.addPizza(pizzas[2]);
+    mealTree.addDrink(drinks[0]);
+    mealTree.addDrink(drinks[0]);
+
+    this->addMeal(mealOne);
+    this->addMeal(mealTwo);
+    this->addMeal(mealTree);
+
 }
 void menu::addPizza(pizza _pizza){
-    this->pizzas.push_back(&_pizza);
+    this->pizzas.push_back(new pizza(_pizza));
 }
 void menu::addDrink(drink _drink){
-    this->drinks.push_back(&_drink);
+    this->drinks.push_back(new drink(_drink));
 }
 void menu::addMeal(meal _meal){
-    this->meals.push_back(&_meal);
+    this->meals.push_back(new meal(_meal));
 }
 void menu::readPizzas(){
 
@@ -43,17 +61,21 @@ void menu::readDrinks(){
 
 }
 void menu::showPizzas(){
+    cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(INGREDIENTS) << "skladniki"  << endl;
     for(unsigned int i=0; i < pizzas.size();i++){
         pizzas[i]->show();
     }
 }
 void menu::showDrinks(){
+    cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(15) << "rozmiar"  << endl;
     for (unsigned int i = 0; i < drinks.size() ; i++ ) {
         drinks[i]->show();
     }
 }
 void menu::showMeals(){
+    //cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(15) << "rozmiar"  << endl;
     for (unsigned int i = 0; i < meals.size() ; i++ ) {
+       // cout << setw(30) << "|#####-------------------------"<< i <<"-----------------------#####|" << endl;
         meals[i]->show();
     }
 }
