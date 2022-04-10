@@ -1,4 +1,10 @@
-Margeritta 20.00 sos_pomidorowy,ser,mozarella,oregano
-Caoriciosa 23.00 szynka,pieczarki,sos_pomidorowy
+Margeritta 20.00 sos_pomidorowy,ser_mozarella,oregano
+Capriciosa 23.00 szynka,pieczarki,sos_pomidorowy
 Kebab 23.00 kurczak_gyros,cebula,sos_Gyros
 Peperoni 25.00 salami,cebula,sos_pomidorowy
+Diabolo 25.00 sos_pomidorowy,cebula,kielbasa_pepperoni,papryka_jalapeno,salami
+Vegga 22.00 sos_pomidorowy,swieza_salata,ogorek,pomidor,tofu
+Rucolsa 24.00 sos_pomidorowy,rukola,pomidori_koktajlowe,parmezan,szynka_parmenska
+Rybia 22.00 sos_pomidorowy,losos_wedzony,oliwki_czarne,mozzarella
+
+
