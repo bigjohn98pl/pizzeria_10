@@ -50,3 +50,6 @@ Thumbs.db
 
 /debug/*
 /release/*
+Makefile
+Makefile.Debug
+Makefile.Release
