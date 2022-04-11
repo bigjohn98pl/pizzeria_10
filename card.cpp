@@ -27,5 +27,5 @@ void card::showPrice(){
     cout << "-----------------------------" << endl;
 }
 void card::showCard(){
-
+//pokazuje mi co wybralam zrob to!!
 }
