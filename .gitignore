@@ -48,8 +48,13 @@ Thumbs.db
 *.mov
 *.wmv
 
-/debug/*
-/release/*
 Makefile
 Makefile.Debug
 Makefile.Release
+debug/
+debug/card.o
+debug/drink.o
+debug/main.o
+debug/meal.o
+debug/menu.o
+debug/pizza.o
