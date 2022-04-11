@@ -1,8 +1,9 @@
-SEROWY_KLASYK 20.00 sos_pomidorowy,ser_mozarella,oregano
-PROSTO-W-SZYNKE 23.00 sos_pomidorowy,ser_mozarella,szynka_parmenska
-NIEBIANSKI_RAJ 23.00 nutella, banany,truskawki_lub_borowki 
-ZIELONA MILA 25.00 sos_pomidorowy,ser_mozarella,oliwki_czarne,oliwki_zielone
-POLSKI_PRZEPIS 25.00 sos_pomidorowy,ser_mozarella,szynka,pieczarki
+
+SEROWY KLASYK	20.00	sos pomidorowy, ser mozarella oregano
+PROSTO W SZYNKE	23.00	sos pomidorowy, ser mozarella, szynka parmenska
+NIEBIANSKI_RAJ	23.00	nutella, banany,truskawki_lub_borowki 
+ZIELONA_MILA	25.00 	sos_pomidorowy,ser_mozarella,oliwki_czarne,oliwki_zielone
+POLSKI_PRZEPIS	25.00	sos_pomidorowy,ser_mozarella,szynka,pieczarki
 PEPPERONOWE_SZALENSTWO 26.00 sos_pomidorowy,ser_mozarella,salami_pepperoni,cebula
 GASTROWIEC 28.00 sos_Gyros,ser_mozzarella,kurczak_gyros,cebula, 
 PLESNIAK 27.00 sos_pomidorowy,ser_mozarella,ser_plesniowy,suszone_pomidory,rukola

@@ -37,12 +37,21 @@ void menu::addMeal(meal _meal){
 
 void menu::readPizzas(){
 
-    string name,ingredients;
+    string name,ingredients,line;
+    string sPrice;
     double price;
     fstream  fin;
     fin.open("pizzas.txt");
 
-    while (fin >> name >> price >> ingredients) {
+
+//    while (fin >> name >> tab >> price >> tab >> ingredients) {
+//        pizzas.push_back(new pizza(name,price,ingredients));
+//    }
+    while(getline(fin, line)){
+        getline(fin, name,'\t');
+        getline(fin, sPrice,'\t');
+        getline(fin, ingredients);
+        price = stod(sPrice);
         pizzas.push_back(new pizza(name,price,ingredients));
     }
     fin.close();
