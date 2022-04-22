@@ -42,11 +42,11 @@ void menu::readPizzas(){
     double price;
     fstream  fin;
     fin.open("pizzas.txt");
+    if( fin.good() != true )
+    {
+    cout << "error - no such file or directory" << endl;
+    }
 
-
-//    while (fin >> name >> tab >> price >> tab >> ingredients) {
-//        pizzas.push_back(new pizza(name,price,ingredients));
-//    }
     while(getline(fin, line)){
         getline(fin, name,'\t');
         getline(fin, sPrice,'\t');
@@ -63,6 +63,10 @@ void menu::readDrinks(){
     double price;
     fstream  fin;
     fin.open("drinks.txt");
+    if( fin.good() != true )
+    {
+    cout << "error - no such file or directory" << endl;
+    }
 
     while (fin >> name >> price >> size) {
         drinks.push_back(new drink(name,price,size));
