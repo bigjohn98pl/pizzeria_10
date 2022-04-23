@@ -1,33 +1,32 @@
-SEROWY_KLASYK 20.00 sos_pomidorowy,ser_mozarella,oregano
-PROSTO-W-SZYNKE 23.00 sos_pomidorowy,ser_mozarella,szynka_parmenska
-NIEBIANSKI_RAJ 23.00 nutella, banany,truskawki_lub_borowki 
-ZIELONA MILA 25.00 sos_pomidorowy,ser_mozarella,oliwki_czarne,oliwki_zielone
-POLSKI_PRZEPIS 25.00 sos_pomidorowy,ser_mozarella,szynka,pieczarki
-PEPPERONOWE_SZALENSTWO 26.00 sos_pomidorowy,ser_mozarella,salami_pepperoni,cebula
-GASTROWIEC 28.00 sos_Gyros,ser_mozzarella,kurczak_gyros,cebula, 
-PLESNIAK 27.00 sos_pomidorowy,ser_mozarella,ser_plesniowy,suszone_pomidory,rukola
-CHLOPSKI_TEAM 28.00 sos_pomidorowy,ser_mozarella, boczek,kabanos,cenula
-ORZEZWIENIE 28.00 sos_pomidorowy,ser_mozarella,pomidor_swiezy,salami,bazylia
-ORZECH_DO_ZGRYZIENIA 28.00 sos_pomidorowy,ser_mozarella,kurczak,rukola,orzeszki_ziemne
-MIELONKA 28.00 sos_bolognese,ser_mozarella,parmezan,bazylia,mielona_wieprzowina
-BAKLAZANOWY_SMAK 28.00 sos_pomidorowy,ser_mozarella,grillowany_baklazan,czosnek,parmezan
-PO_MEKSYKANSKU 28.00 sos_pomidorowy,ser_mozarella,salami_pepperoni,cebula,papryczki_jalapeno
-JESTESMY_W_TEKSASIE 30.00 sos_BBQ,ser_mozzarella,szarpana_wieprzowina,kabanos,kukurydza
-ZAPIECZE 30.00 sos_pomidorowy,ser_mozzarella,cebula,kielbasa_pepperoni,papryka_jalapeno,salami
-ZIELONE_TOFU 30.00 sos_pomidorowy,ser_mozzarella,swieza_salata,ogorek,pomidor,tofu
-RUKOLINA 30.00 sos_pomidorowy,ser_mozzarella,rukola,pomidorki_koktajlowe,parmezan,szynka_parmenska
-MORSKI_SZUM 30.00 sos_pomidorowy,ser_mozzarella,losos_wedzony,oliwki_czarne,ser_feta,gorgonzola
-ZDROWY_SMAK 30.00 sos_pomidorowy,ser_mozarella, grillowana_cukinia, kukurydza,czosnek,bazylia
-ROLNIK 30.00 sos_pomidorowy,ser_mozarella,kabanos,kukurydza,cebula,papryka
-SERNIAK 30.00 sos_pomidorowy,ser_mozarella,suszone_pomidory,ser_plesniowy,ser_feta,parmezan
-MORSKI_SMAK 30.00 sos_pomidorowy,ser_mozarella,krewetki,oliwki,cebula,ser_feta
-EGZOTYCZNE_MIEJSCE 30.00 sos_pomidorowy,ser_mozarella,ananas,kukurydza,ser_feta,bazylia
-NA_ZIELONO 30.00 sos_pomidorowy,ser_mozarella,szpinak,ser_feta,pomidor_swiezy,pestki_slonecznika
-KLASYKA 30.00 sos_pomidorowy,ser_mozarella,szynka,salami,oliwki,kukurydza
-GORSKA_PODROZ 31.00 sos_pomidorowy,ser_mozarella,oscypek,zurawina,kozi_ser,boczek
-VEGA-FOOD 32.00 sos_pomidorowy,ser_mozarella,papryka,pieczarki,brokuly,kukurydza,cebula
-GRUCHA_PIETRUCHA 32.00 sos_pomidorowy,ser_mozarella,gruszka,orzechy_wloskie,rukola,gorgonzola,parmezan
-KOMPOZYCJA 32.00 sos_pomidorowy,ser_mozarella,5_skladnikow_do_wyboru(jedno_miesne_reszta_warzywana)
-
+SEROWY KLASYK	20.00	sos pomidorowy, ser mozarella, oregano
+PROSTO W SZYNKE	23.00	sos pomidorowy, ser mozarella, szynka parmenska
+NIEBIANSKI RAJ	23.00	nutella, banany, truskawki lub borowki 
+ZIELONA MILA	25.00	sos pomidorowy, ser mozarella, oliwki czarne, oliwki zielone
+POLSKI PRZEPIS	25.00	sos pomidorowy, ser mozarella, szynka, pieczarki
+PEPPERONOWE SZALENSTWO	26.00	sos pomidorowy, ser mozarella, salami pepperoni, cebula
+GASTROWIEC	28.00	sos Gyros, ser mozzarella, kurczak gyros, cebula 
+PLESNIAK	27.00	sos pomidorowy, ser mozarella, ser plesniowy, suszone pomidory, rukola
+CHLOPSKI TEAM	28.00	sos pomidorowy, ser mozarella, boczek, kabanos, cebula
+ORZEZWIENIE	28.00	sos pomidorowy, ser mozarella, pomidor swiezy, salami, bazylia
+ORZECH DO ZGRYZIENIA	28.00	sosomidorowy, ser mozarella, kurczak, rukola, orzeszki ziemne
+MIELONKA	28.00	sos bolognese, ser mozarella parmezan, bazylia, mielona wieprzowina
+BAKLAZANOWY SMAK	28.00	sos pomidorowy, ser mozarella, grillowany baklazan, czosnek, parmezan
+PO MEKSYKANSKU	28.00	sos pomidorowy, ser mozarella, salami pepperoni, cebula, papryczki jalapeno
+JESTESMY W TEKSASIE	30.00	sos_BBQ, ser mozzarella, szarpana wieprzowina, kabanos, kukurydza
+ZAPIECZE	30.00	sos pomidorowy, ser mozzarella, cebula, kielbasa pepperoni, papryka jalapeno, salami
+ZIELONE TOFU	30.00	sos pomidorowy, ser mozzarella, swieza salata, ogorek, pomidor, tofu
+RUKOLINA	30.00	sos pomidorowy, ser mozzarella, rukola, pomidorki koktajlowe, parmezan, szynka parmenska
+MORSKI SZUM	30.00	sos pomidorowy, ser mozzarella, losos wedzony, oliwki czarne, ser feta, gorgonzola
+ZDROWY SMAK	30.00	sos pomidorowy, ser mozarella, grillowana cukinia, kukurydza, czosnek, bazylia
+ROLNIK	30.00	sos pomidorowy, ser mozarella, kabanos, kukurydza, cebula, papryka
+SERNIAK	30.00	sos pomidorowy, ser mozarella, suszone pomidory, ser plesniowy, ser feta, parmezan
+MORSKI SMAK	30.00	sos pomidorowy, ser mozarella, krewetki, oliwki, cebula, ser feta
+EGZOTYCZNE MIEJSCE	30.00	sos pomidorowy, ser mozarella, ananas, kukurydza, ser feta, bazylia
+NA ZIELONO	30.00	sos pomidorowy, ser mozarella, szpinak, ser feta, pomidor swiezy, pestki slonecznika
+KLASYKA	30.00	sos pomidorowy, ser mozarella, szynka, salami, oliwki, kukurydza
+GORSKA PODROZ	31.00	sos pomidorowy, ser mozarella, oscypek, zurawina, kozi ser, boczek
+VEGA FOOD	32.00	sos pomidorowy, ser mozarella, papryka, pieczarki, brokuly, kukurydza, cebula
+GRUCHA PIETRUCHA	32.00	sos pomidorowy, ser mozarella, gruszka, orzechy wloskie, rukola, gorgonzola, parmezan
+TWOJ SPECJAL	32.00	sos pomidorowy, ser mozarella, 5 skladnikow do wyboru(jedno miesne reszta warzywana)
 
 
