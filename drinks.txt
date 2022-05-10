@@ -1,25 +1,25 @@
-papsi 6/12 0.25l/1l
-sixup 6/12 0.25l/1l
-mirianda 6/12 0.25l/1l
-nesta_cytryna 6/12 0.25l/1l
-nesta_brzoskwinia 6/12 0.25l/1l
-sok_pomaranczowy 6/12 0.25l/1l
-sok_porzeczkowy 6/12 0.25l/1l
-sok_grejpfrutowy 6/12 0.25l/1l
-sok_jablkowy 6/12 0.25l/1l
-woda_niegazowana 5/10 0.33l/1l
-woda_gazowana 5/10 0.33l/1l
+papsi	6	0.25
+sixup	6	0.25
+mirianda	6	0.25
+nesta cytryna	6	0.25
+nesta brzoskwinia	6	0.25
+sok pomaranczowy	6	0.25
+sok porzeczkowy	6	0.25
+sok grejpfrutowy	6	0.25
+sok jablkowy	6	0.25
+woda niegazowana	5	0.33
+woda gazowana	5	0.33
 
-kawa_czarna 8 0.2l
-kawa_biala 8 0.2l
-cappucino 9 0.2l
-latte 10 0.25l
-latte_machiatto 11 0.25l
-kawa_mrozona 11 0.3l
+kawa czarna	8	0.2
+kawa biala	8	0.2
+cappucino	9	0.2
+latte	10	0.25
+latte machiatto	11	0.25
+kawa mrozona	11	0.3
 
-herbata_czarna 8 0.25l
-herbata_earl grey 8 0.25l
-herbata_zielona 8 0.25l
-herbata_mietowa 8 0.25l
-herbata_malinowa 8 0.25l
+herbata czarna	8	0.25
+herbata earl grey	8	0.25
+herbata zielona	8	0.25
+herbata mietowa	8	0.25
+herbata malinowa	8	0.25
 

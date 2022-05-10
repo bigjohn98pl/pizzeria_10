@@ -59,7 +59,7 @@ void menu::readPizzas(){
 
 void menu::readDrinks(){
 
-    string name,size;
+    string name,size, line, sPrice;
     double price;
     fstream  fin;
     fin.open("drinks.txt");
@@ -68,7 +68,11 @@ void menu::readDrinks(){
     cout << "error - no such file or directory" << endl;
     }
 
-    while (fin >> name >> price >> size) {
+    while (getline(fin, line)) {
+        getline(fin, name,'\t');
+        getline(fin, sPrice,'\t');
+        getline(fin, size);
+        price= stod(sPrice);
         drinks.push_back(new drink(name,price,size));
     }
     fin.close();
