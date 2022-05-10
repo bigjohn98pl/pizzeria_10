@@ -13,6 +13,8 @@ public:
     void set(string _name, double _price, string _ingredients);
     double getPrice();
     void show();
+    void show_2();
+
 
 private:
 

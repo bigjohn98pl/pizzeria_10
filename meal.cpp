@@ -21,17 +21,14 @@ double meal::getPrice(){
     return this->price;
 }
 void meal::show(){
-    cout << setw(70) << "================================= Pizze =============================" << endl;
-    cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(INGREDIENTS) << "skladniki"  << endl << endl;
+    cout << setw(NAME+PRICE) << "===================== ZESTAW =================" << endl;
+    cout << setw(NAME) << "nazwa" << setw(PRICE) <<  "cena" << endl << endl;
     for (unsigned int i = 0;i < this->pizzas.size() ; i++ ) {
-        this->pizzas[i]->show();
+        this->pizzas[i]->show_2();
     }
-    cout << setw(70) << "================================= Napoje ============================" << endl;
-    cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(15) << "rozmiar"  << endl << endl;
     for (unsigned int i = 0;i < this->drinks.size() ; i++ ) {
-        this->drinks[i]->show();
+        this->drinks[i]->show_2();
     }
-    cout << setw(70) << "|--------------------------- Cena-----------------------------|" << endl;
-    cout << setw(30) << getPrice() << endl;
-    cout << setw(70) << "|-------------------------------------------------------------|" << endl;
+    cout << endl;
+    cout << setw(15) << "CENA ZA ZESTAW: " << setw(15) << getPrice() << endl;
 }

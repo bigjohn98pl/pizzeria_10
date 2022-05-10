@@ -16,6 +16,7 @@ public:
     drink();
     drink(string& _name,double& _price, string& _size);
     void show();
+    void show_2();
     double getPrice();
     drink set(string& _name,double& _price, string& _size);
     ~drink();

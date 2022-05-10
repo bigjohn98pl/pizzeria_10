@@ -33,5 +33,8 @@ drink drink::set(string& _name,double& _price, string& _size){
     return *this;
 }
 void drink::show(){
-    cout << setw(15) << *name << setw(15) << *price << setw(15) << *size << endl;
+    cout << setw(NAME) << *name << setw(PRICE) << *price << setw(SIZE) << *size << endl;
+}
+void drink::show_2(){
+    cout << setw(NAME) << *name << setw(PRICE) << *price << setw(SIZE) << *size << endl;
 }

@@ -6,6 +6,7 @@ enum length{
     NAME = 20,
     PRICE = 10,
     INGREDIENTS = 50,
+    SIZE = 10,
 };
 #include <iostream>
 #include <iomanip>
