@@ -1,7 +1,12 @@
 #ifndef HEADER_HPP
 #define HEADER_HPP
 
-#define INGREDIENTS 40
+
+enum length{
+    NAME = 20,
+    PRICE = 10,
+    INGREDIENTS = 50,
+};
 #include <iostream>
 #include <iomanip>
 #include <fstream>

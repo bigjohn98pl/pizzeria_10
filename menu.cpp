@@ -74,13 +74,13 @@ void menu::readDrinks(){
     fin.close();
 }
 void menu::showPizzas(){
-    cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(INGREDIENTS) << "skladniki"  << endl;
+    cout << setw(NAME) << "nazwa" << setw(PRICE) <<  "cena" << setw(INGREDIENTS) << "skladniki"  << endl;
     for(unsigned int i=0; i < pizzas.size();i++){
         pizzas[i]->show();
     }
 }
 void menu::showDrinks(){
-    cout << setw(15) << "nazwa" << setw(15) <<  "cena" << setw(15) << "rozmiar"  << endl;
+    cout << setw(NAME) << "nazwa" << setw(PRICE) <<  "cena" << setw(INGREDIENTS) << "rozmiar"  << endl;
     for (unsigned int i = 0; i < drinks.size() ; i++ ) {
         drinks[i]->show();
     }
