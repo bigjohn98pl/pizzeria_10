@@ -122,10 +122,10 @@ void menu::showMenu(){
             this->showMeals();
             break;
         case 4:
-//            shopingCard->addCardDrink(*drinks[0]);
-//            shopingCard->addCardPizza(*pizzas[0]);
-//            shopingCard->addCardMeal(*meals[0]);
-            shopingCard->showCard();
+            shopingCard.addCardDrink(*drinks[0]);
+            shopingCard.addCardPizza(*pizzas[0]);
+            shopingCard.addCardMeal(*meals[0]);
+            shopingCard.showCard();
             break;
         case 5:
             shoudShopping = false;

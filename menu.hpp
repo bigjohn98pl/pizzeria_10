@@ -12,7 +12,7 @@ private:
     vector<pizza*> pizzas;
     vector<drink*> drinks;
     vector<meal*> meals;
-    card* shopingCard;
+    card shopingCard;
 
 public:
 
