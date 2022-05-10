@@ -18,9 +18,9 @@ private:
 public:
     card();
 
-    void addCardPizza(pizza _pizza);
-    void addCardDrink(drink _drink);
-    void addCardMeal(meal _meal);
+    void addCardPizza(pizza &_pizza);
+    void addCardDrink(drink &_drink);
+    void addCardMeal(meal &_meal);
     double getPrice();
 
     void showPrice();
