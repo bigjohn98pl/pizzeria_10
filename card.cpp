@@ -27,6 +27,7 @@ void card::showPrice(){
     cout << "-----------------------------" << endl;
 }
 void card::showCard(){
+    cout << "#######################################################" << endl;
     for(unsigned int i=0; i < cardPizzas.size();i++){
         cardPizzas[i]->show_2();
     }
@@ -40,5 +41,6 @@ void card::showCard(){
     }
     cout << endl;
 
-    cout << "LACZNA CENA: " << getPrice() << endl;
+    cout << "LACZNA CENA: " << setprecision(4) << price << endl;
+    cout << "#######################################################" << endl;
 }
