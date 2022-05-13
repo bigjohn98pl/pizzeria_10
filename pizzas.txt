@@ -14,7 +14,7 @@ MIELONKA	28.00	sos bolognese, ser mozarella parmezan, bazylia, mielona wieprzowi
 BAKLAZANOWY SMAK	28.00	sos pomidorowy, ser mozarella, grillowany baklazan, czosnek, parmezan
 PO MEKSYKANSKU	28.00	sos pomidorowy, ser mozarella, salami pepperoni, cebula, papryczki jalapeno
 JESTESMY W TEKSASIE	30.00	sos_BBQ, ser mozzarella, szarpana wieprzowina, kabanos, kukurydza
-ZAPIECZE	30.00	sos pomidorowy, ser mozzarella, cebula, kielbasa pepperoni, papryka jalapeno, salami
+ZAPIECZE DWA RAZY	30.00	sos pomidorowy, ser mozzarella, cebula, kielbasa pepperoni, papryka jalapeno, salami
 ZIELONE TOFU	30.00	sos pomidorowy, ser mozzarella, swieza salata, ogorek, pomidor, tofu
 RUKOLINA	30.00	sos pomidorowy, ser mozzarella, rukola, pomidorki koktajlowe, parmezan, szynka parmenska
 MORSKI SZUM	30.00	sos pomidorowy, ser mozzarella, losos wedzony, oliwki czarne, ser feta, gorgonzola

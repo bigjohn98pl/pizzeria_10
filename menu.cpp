@@ -47,7 +47,7 @@ void menu::readPizzas(){
     cout << "error - no such file or directory" << endl;
     }
 
-    while(getline(fin, line)){
+    while(!fin.eof()){
         getline(fin, name,'\t');
         getline(fin, sPrice,'\t');
         getline(fin, ingredients);
@@ -68,7 +68,7 @@ void menu::readDrinks(){
     cout << "error - no such file or directory" << endl;
     }
 
-    while (getline(fin, line)) {
+    while (!fin.eof()) {
         getline(fin, name,'\t');
         getline(fin, sPrice,'\t');
         getline(fin, size);
