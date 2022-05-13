@@ -159,7 +159,7 @@ void menu::showMenu(){
 
                     for(unsigned int i=0;i<howMuch;i++) {
 
-                        shopingCard.addCardDrinks(*drinks[number-1]);
+                        shopingCard.addCardDrink(*drinks[number-1]);
                     }
                     number=0;
                     howMuch=0;
@@ -173,18 +173,33 @@ void menu::showMenu(){
 
         case 3:
             this->showMeals();
-            cout << endl;
-            cout << "Podaj numer zestawu jaki chcesz zamowic: ";
-            cin >> number;
-            cout << "Podaj ilosc: ";
-            cin >> howMuch;
-            for(unsigned int i=0;i<howMuch;i++) {
+            while(clientChoose!=0){
 
-                shopingCard.addCardMeal(*meals[number-1]);
+                cout << "1. Zamow" << endl;
+                cout << "0. Powrot do menu" << endl;
+                cin >> clientChoose;
+                switch(clientChoose){
+                case 1:
+
+                    cout << "Podaj numer zestawu, ktory chcesz zamowic: ";
+                    cin >> number;
+                    cout << "Podaj ilosc: ";
+                    cin >> howMuch;
+
+                  for(unsigned int i=0;i<howMuch;i++) {
+
+                        shopingCard.addCardMeal(*meals[number-1]);
+                  }
+                  number=0;
+                  howMuch=0;
+                  break;
+                case 0:
+
+                    break;
+                }
             }
-            number=0;
-            howMuch=0;
             break;
+
         case 4:
             shopingCard.showCard();
             break;
