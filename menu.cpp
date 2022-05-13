@@ -212,6 +212,19 @@ void menu::showMenu(){
 
         case 4:
             shopingCard.showCard();
+            cout << "1. Zamawiam" << endl;
+            cout << "0. Powrot do menu" << endl;
+            //zmien zamowienie????? dodajemY???
+            switch(clientChoose){
+            case 1:
+
+                //show paragon
+
+                break;
+            case 0:
+
+                break;
+            }
             break;
         case 5:
             shoudShopping = false;
@@ -220,7 +233,7 @@ void menu::showMenu(){
             cout << "--------------------------------------------\n";
             break;
         default:
-            cout << "Nieprawidłowy nr, podaj liczbe z przedzialu od 1 do 5." << endl;
+            cout << "Nieprawidlowy nr, podaj liczbe z przedzialu od 1 do 5." << endl;
             break;
         }
 
