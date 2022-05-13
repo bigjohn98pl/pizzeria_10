@@ -1,4 +1,3 @@
-
 SEROWY KLASYK	20.00	sos pomidorowy, ser mozarella, oregano
 PROSTO W SZYNKE	23.00	sos pomidorowy, ser mozarella, szynka parmenska
 NIEBIANSKI RAJ	23.00	nutella, banany, truskawki lub borowki 
@@ -29,6 +28,4 @@ GORSKA PODROZ	31.00	sos pomidorowy, ser mozarella, oscypek, zurawina, kozi ser, 
 VEGA FOOD	32.00	sos pomidorowy, ser mozarella, papryka, pieczarki, brokuly, kukurydza, cebula
 GRUCHA PIETRUCHA	32.00	sos pomidorowy, ser mozarella, gruszka, orzechy wloskie, rukola, gorgonzola, parmezan
 TWOJ SPECJAL	32.00	sos pomidorowy, ser mozarella, 5 skladnikow do wyboru(jedno miesne reszta warzywana)
-
-
 

@@ -97,6 +97,7 @@ void menu::showMeals(){
 void menu::showMenu(){
     unsigned int clientChoose = 0;
     bool shoudShopping = true;
+    unsigned int number=0, howMuch=0;
 
     while(shoudShopping){
 
@@ -114,17 +115,65 @@ void menu::showMenu(){
         switch (clientChoose){
         case 1:
             this->showPizzas();
+            while(clientChoose!=0){
+
+                cout << "1. Zamow" << endl;
+                cout << "0. Powrot do menu" << endl;
+                cin >> clientChoose;
+                switch(clientChoose){
+                case 1:
+
+                    //this->showPizzas();
+                    //cout << endl;
+                    cout << "Podaj numer pizzy, ktora chcesz zamowic: ";
+                    cin >> number;
+                    cout << "Podaj ilosc: ";
+                    cin >> howMuch;
+
+                    for(unsigned int i=0;i<howMuch;i++) {
+
+                        shopingCard.addCardPizza(*pizzas[number-1]);
+                    }
+                    number=0;
+                    howMuch=0;
+                    break;
+                case 0:
+
+                    break;
+                }
+            }
+
+
             break;
         case 2:
             this->showDrinks();
+            cout << endl;
+            cout << "Podaj numer napoju, ktory chcesz zamowic: ";
+            cin >> number;
+            cout << "Podaj ilosc: ";
+            cin >> howMuch;
+            for(unsigned int i=0;i<howMuch;i++) {
+
+                shopingCard.addCardDrink(*drinks[number-1]);
+            }
+            number=0;
+            howMuch=0;
             break;
         case 3:
             this->showMeals();
+            cout << endl;
+            cout << "Podaj numer zestawu jaki chcesz zamowic: ";
+            cin >> number;
+            cout << "Podaj ilosc: ";
+            cin >> howMuch;
+            for(unsigned int i=0;i<howMuch;i++) {
+
+                shopingCard.addCardMeal(*meals[number-1]);
+            }
+            number=0;
+            howMuch=0;
             break;
         case 4:
-            shopingCard.addCardDrink(*drinks[0]);
-            shopingCard.addCardPizza(*pizzas[0]);
-            shopingCard.addCardMeal(*meals[0]);
             shopingCard.showCard();
             break;
         case 5:
