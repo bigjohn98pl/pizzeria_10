@@ -28,6 +28,7 @@ void card::showPrice(){
 }
 void card::showCard(){
     cout << "#######################################################" << endl;
+    cout << "                       KOSZYK                          " << endl;
     for(unsigned int i=0; i < cardPizzas.size();i++){
         cardPizzas[i]->show_2();
     }
@@ -42,5 +43,33 @@ void card::showCard(){
     cout << endl;
 
     cout << "LACZNA CENA: " << setprecision(4) << price << endl;
+    cout << "#######################################################" << endl;
+}
+void card::showReceipt(){
+    cout << "#######################################################" << endl;
+    cout << "------PIZZERIA NAZWA JAKAS MA BYC----------------------" << endl << endl;
+    cout << "33-100, Tarnow, ul. Maslana 52" << endl;
+    cout << "NIP: 420-21-37-666                              W208799" << endl;
+    cout << "                   PARAGON FISKALNY                    " << endl;
+    cout << endl << endl;
+    for(unsigned int i=0; i < cardPizzas.size();i++){
+        cardPizzas[i]->show_2();
+    }
+    cout << endl;
+    for(unsigned int i=0; i < cardDrinks.size();i++){
+        cardDrinks[i]->show_2();
+    }
+    cout << endl;
+    for(unsigned int i=0; i < cardMeals.size();i++){
+        cardMeals[i]->show();
+    }
+    cout << endl;
+    cout << endl;               //data godzina
+    cout << "Suma: "<< setprecision(4) << price << "zl" << endl;
+    cout << "DO ZAPLATY: " << setprecision(4) << price << "zl" << endl;
+    //gotowka/karta/online
+    //data+godzina
+    cout << "AB34576965NJNJ7JBVHH45B6H47B7JNN8BVNK4YNBO7BN7NB854VNVF" << endl;
+    cout << "Nr Sys.:                                    FPP PA:Data" << endl;
     cout << "#######################################################" << endl;
 }

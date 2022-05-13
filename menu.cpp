@@ -214,12 +214,13 @@ void menu::showMenu(){
             shopingCard.showCard();
             cout << "1. Zamawiam" << endl;
             cout << "0. Powrot do menu" << endl;
-            //zmien zamowienie????? dodajemY???
+            cin >> clientChoose;
+            system("cls");
+                                                     //zmien zamowienie????? dodajemY???
             switch(clientChoose){
             case 1:
 
-                //show paragon
-
+                shopingCard.showReceipt();
                 break;
             case 0:
 

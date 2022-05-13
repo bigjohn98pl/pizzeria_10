@@ -25,6 +25,8 @@ public:
 
     void showPrice();
     void showCard();
+    void showReceipt();
+
 };
 
 #endif // CARD_HPP
