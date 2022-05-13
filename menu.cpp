@@ -44,7 +44,7 @@ void menu::readPizzas(){
     fin.open("pizzas.txt");
     if( fin.good() != true )
     {
-    cout << "error - no such file or directory" << endl;
+        cout << "error - no such file or directory" << endl;
     }
 
     while(!fin.eof()){
@@ -65,7 +65,7 @@ void menu::readDrinks(){
     fin.open("drinks.txt");
     if( fin.good() != true )
     {
-    cout << "error - no such file or directory" << endl;
+        cout << "error - no such file or directory" << endl;
     }
 
     while (!fin.eof()) {
@@ -104,7 +104,7 @@ void menu::showMenu(){
         cout << "--------------------------------------------\n";
         cout << "Witamy w naszej Pizzeri!" << endl;
         cout << "--------------------------------------------\n";
-        cout << "1. Lista Pizz'e" << endl;
+        cout << "1. Lista Pizz" << endl;
         cout << "2. Lista napoji" << endl;
         cout << "3. Lista zestawów" << endl;
         cout << "4. Koszyk" << endl;
@@ -112,14 +112,16 @@ void menu::showMenu(){
 
         cin >> clientChoose;
 
+        system("cls");
+
         switch (clientChoose){
         case 1:
-            this->showPizzas();
             while(clientChoose!=0){
-
+                this->showPizzas();
                 cout << "1. Zamow" << endl;
                 cout << "0. Powrot do menu" << endl;
                 cin >> clientChoose;
+
                 switch(clientChoose){
                 case 1:
 
@@ -127,6 +129,9 @@ void menu::showMenu(){
                     cin >> number;
                     cout << "Podaj ilosc: ";
                     cin >> howMuch;
+                    cout << "Dodano do koszyka" << endl;
+                    system("PAUSE");
+                    system("cls");
 
                     for(unsigned int i=0;i<howMuch;i++) {
 
@@ -143,9 +148,8 @@ void menu::showMenu(){
             break;
 
         case 2:
-            this->showDrinks();
             while(clientChoose!=0){
-
+                this->showDrinks();
                 cout << "1. Zamow" << endl;
                 cout << "0. Powrot do menu" << endl;
                 cin >> clientChoose;
@@ -156,6 +160,9 @@ void menu::showMenu(){
                     cin >> number;
                     cout << "Podaj ilosc: ";
                     cin >> howMuch;
+                    cout << "Dodano do koszyka" << endl;
+                    system("PAUSE");
+                    system("cls");
 
                     for(unsigned int i=0;i<howMuch;i++) {
 
@@ -172,9 +179,8 @@ void menu::showMenu(){
             break;
 
         case 3:
-            this->showMeals();
             while(clientChoose!=0){
-
+                this->showMeals();
                 cout << "1. Zamow" << endl;
                 cout << "0. Powrot do menu" << endl;
                 cin >> clientChoose;
@@ -185,14 +191,18 @@ void menu::showMenu(){
                     cin >> number;
                     cout << "Podaj ilosc: ";
                     cin >> howMuch;
+                    cout << "Dodano do koszyka" << endl;
+                    system("PAUSE");
+                    system("cls");
 
-                  for(unsigned int i=0;i<howMuch;i++) {
+
+                    for(unsigned int i=0;i<howMuch;i++) {
 
                         shopingCard.addCardMeal(*meals[number-1]);
-                  }
-                  number=0;
-                  howMuch=0;
-                  break;
+                    }
+                    number=0;
+                    howMuch=0;
+                    break;
                 case 0:
 
                     break;
