@@ -123,8 +123,6 @@ void menu::showMenu(){
                 switch(clientChoose){
                 case 1:
 
-                    //this->showPizzas();
-                    //cout << endl;
                     cout << "Podaj numer pizzy, ktora chcesz zamowic: ";
                     cin >> number;
                     cout << "Podaj ilosc: ";
@@ -142,23 +140,37 @@ void menu::showMenu(){
                     break;
                 }
             }
-
-
             break;
+
         case 2:
             this->showDrinks();
-            cout << endl;
-            cout << "Podaj numer napoju, ktory chcesz zamowic: ";
-            cin >> number;
-            cout << "Podaj ilosc: ";
-            cin >> howMuch;
-            for(unsigned int i=0;i<howMuch;i++) {
+            while(clientChoose!=0){
 
-                shopingCard.addCardDrink(*drinks[number-1]);
+                cout << "1. Zamow" << endl;
+                cout << "0. Powrot do menu" << endl;
+                cin >> clientChoose;
+                switch(clientChoose){
+                case 1:
+
+                    cout << "Podaj numer napoju, ktory chcesz zamowic: ";
+                    cin >> number;
+                    cout << "Podaj ilosc: ";
+                    cin >> howMuch;
+
+                    for(unsigned int i=0;i<howMuch;i++) {
+
+                        shopingCard.addCardDrinks(*drinks[number-1]);
+                    }
+                    number=0;
+                    howMuch=0;
+                    break;
+                case 0:
+
+                    break;
+                }
             }
-            number=0;
-            howMuch=0;
             break;
+
         case 3:
             this->showMeals();
             cout << endl;
