@@ -9,7 +9,8 @@ SOURCES += \
         main.cpp \
         meal.cpp \
         menu.cpp \
-        pizza.cpp
+        pizza.cpp \
+        receipt.cpp
 
 HEADERS += \
     card.hpp \
@@ -17,4 +18,5 @@ HEADERS += \
     header.hpp \
     meal.hpp \
     menu.hpp \
-    pizza.hpp
+    pizza.hpp \
+    receipt.hpp
