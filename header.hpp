@@ -3,10 +3,11 @@
 
 
 enum length{
-    NAME = 20,
+    NAME = 22,
     PRICE = 10,
-    INGREDIENTS = 50,
-    SIZE = 10,
+    INGREDIENTS = 40,
+    SIZE = 5,
+    SPACE = 4
 };
 #include <iostream>
 #include <iomanip>

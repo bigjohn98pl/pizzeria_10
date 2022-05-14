@@ -47,7 +47,7 @@ void menu::readPizzas(){
         cout << "error - no such file or directory" << endl;
     }
 
-    while(!fin.eof()){
+    while(fin){
         getline(fin, name,'\t');
         getline(fin, sPrice,'\t');
         getline(fin, ingredients);
@@ -68,7 +68,7 @@ void menu::readDrinks(){
         cout << "error - no such file or directory" << endl;
     }
 
-    while (!fin.eof()) {
+    while (fin) {
         getline(fin, name,'\t');
         getline(fin, sPrice,'\t');
         getline(fin, size);
@@ -78,21 +78,24 @@ void menu::readDrinks(){
     fin.close();
 }
 void menu::showPizzas(){
-    cout << setw(NAME) << "nazwa" << setw(PRICE) <<  "cena" << setw(INGREDIENTS) << "skladniki"  << endl;
+    cout << left << setw(NAME) << " nazwa " << right << setw(PRICE) << " cena " << left << "     " << setw(INGREDIENTS) << " skladniki "  << endl << endl;
     for(unsigned int i=0; i < pizzas.size();i++){
         pizzas[i]->show();
     }
+    cout << endl;
 }
 void menu::showDrinks(){
-    cout << setw(NAME) << "nazwa" << setw(PRICE) <<  "cena" << setw(INGREDIENTS) << "rozmiar"  << endl;
+    cout << left << setw(NAME) << " nazwa " << right << setw(PRICE) << " cena " << left << "     " << setw(SIZE) << " rozmiar "  << endl << endl;
     for (unsigned int i = 0; i < drinks.size() ; i++ ) {
         drinks[i]->show();
     }
+    cout << endl;
 }
 void menu::showMeals(){
     for (unsigned int i = 0; i < meals.size() ; i++ ) {
         meals[i]->show();
     }
+    cout << endl;
 }
 void menu::showMenu(){
     unsigned int clientChoose = 0;
