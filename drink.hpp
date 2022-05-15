@@ -6,7 +6,8 @@
 class drink{
 
 private:
-
+    unsigned int *id;
+    unsigned int *amount;
     string* name;
     double* price;
     string* size;
@@ -14,11 +15,15 @@ private:
 public:
 
     drink();
-    drink(string& _name,double& _price, string& _size);
+    drink(drink &copy, unsigned int &_amount);
+    drink(unsigned int &_id,string& _name,double& _price, string& _size);
     void show();
     void show_2();
     double getPrice();
-    drink set(string& _name,double& _price, string& _size);
+    unsigned int getId();
+    unsigned int getAmount();
+    void set(string& _name,double& _price, string& _size);
+    void setAmount(unsigned int &_amount);
     ~drink();
 };
 

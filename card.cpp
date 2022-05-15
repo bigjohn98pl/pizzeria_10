@@ -5,17 +5,17 @@ card::card()
     price = 0;
 }
 
-void card::addCardPizza(pizza &_pizza){
-    this->cardPizzas.push_back(new pizza(_pizza));
-    this->price += _pizza.getPrice();
+void card::addCardPizza(pizza &_pizza,unsigned int &_amount){
+    this->cardPizzas.push_back(new pizza(_pizza,_amount));
+    this->price += _pizza.getPrice()*_amount;
 }
-void card::addCardDrink(drink &_drink){
-    this->cardDrinks.push_back(new drink(_drink));
-    this->price += _drink.getPrice();
+void card::addCardDrink(drink &_drink,unsigned int &_amount){
+    this->cardDrinks.push_back(new drink(_drink,_amount));
+    this->price += _drink.getPrice()*_amount;
 }
-void card::addCardMeal(meal &_meal){
-    this->cardMeals.push_back(new meal(_meal));
-    this->price += _meal.getPrice();
+void card::addCardMeal(meal &_meal, unsigned int &_amount){
+    this->cardMeals.push_back(new meal(_meal,_amount));
+    this->price += _meal.getPrice()*_amount;
 }
 double card::getPrice(){
     return price;
@@ -42,9 +42,10 @@ void card::showCard(){
     }
     cout << endl;
 
-    cout << "LACZNA CENA: " << setprecision(4) << price << endl;
+    cout << "LACZNA CENA: " << right << setw(NAME+PRICE+3) << setprecision(2) << price << endl;
     cout << "#######################################################" << endl;
 }
+
 void card::showReceipt(){
     cout << "#######################################################" << endl;
     cout << "------PIZZERIA NAZWA JAKAS MA BYC----------------------" << endl << endl;

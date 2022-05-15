@@ -4,23 +4,26 @@ menu::menu()
 {
     readPizzas();
     readDrinks();
-    meal mealOne,mealTwo,mealTree;
-    mealOne.addPizza(pizzas[1]);
-    mealOne.addPizza(pizzas[3]);
-    mealOne.addDrink(drinks[0]);
 
-    mealTwo.addPizza(pizzas[1]);
-    mealTwo.addDrink(drinks[0]);
-    mealTwo.addDrink(drinks[0]);
+    meal meal1(1),meal2(2),meal3(3),meal4(4);
 
-    mealTree.addPizza(pizzas[2]);
-    mealTree.addPizza(pizzas[2]);
-    mealTree.addDrink(drinks[0]);
-    mealTree.addDrink(drinks[0]);
+    meal1.addPizza(pizzas[1],1);
+    meal1.addPizza(pizzas[3],1);
+    meal1.addDrink(drinks[0],1);
 
-    this->addMeal(mealOne);
-    this->addMeal(mealTwo);
-    this->addMeal(mealTree);
+    meal2.addPizza(pizzas[1]);
+    meal2.addDrink(drinks[0],1);
+
+    meal3.addPizza(pizzas[2],1);
+    meal3.addDrink(drinks[0],2);
+
+    meal4.addPizza(pizzas[5],2);
+    meal4.addDrink(drinks[3],2);
+
+    this->addMeal(meal1);
+    this->addMeal(meal2);
+    this->addMeal(meal3);
+    this->addMeal(meal4);
 
 }
 void menu::addPizza(pizza _pizza){
@@ -40,19 +43,20 @@ void menu::readPizzas(){
     string name,ingredients,line;
     string sPrice;
     double price;
-    fstream  fin;
+    ifstream  fin;
+    unsigned int id =0;
     fin.open("pizzas.txt");
     if( fin.good() != true )
     {
         cout << "error - no such file or directory" << endl;
     }
 
-    while(fin){
+    while(!fin.eof()){
         getline(fin, name,'\t');
         getline(fin, sPrice,'\t');
         getline(fin, ingredients);
         price = stod(sPrice);
-        pizzas.push_back(new pizza(name,price,ingredients));
+        pizzas.push_back(new pizza(++id,name,price,ingredients));
     }
     fin.close();
 }
@@ -61,32 +65,35 @@ void menu::readDrinks(){
 
     string name,size, line, sPrice;
     double price;
-    fstream  fin;
+    ifstream  fin;
+    unsigned int id =0;
     fin.open("drinks.txt");
     if( fin.good() != true )
     {
         cout << "error - no such file or directory" << endl;
     }
 
-    while (fin) {
+    while (!fin.eof()) {
         getline(fin, name,'\t');
         getline(fin, sPrice,'\t');
         getline(fin, size);
         price= stod(sPrice);
-        drinks.push_back(new drink(name,price,size));
+        drinks.push_back(new drink(++id,name,price,size));
     }
     fin.close();
 }
 void menu::showPizzas(){
-    cout << left << setw(NAME) << " nazwa " << right << setw(PRICE) << " cena " << left << "     " << setw(INGREDIENTS) << " skladniki "  << endl << endl;
+    cout << left << setw(3) << " nr." << setw(NAME) << " nazwa " << right << setw(PRICE) << " cena " << left << "     " << setw(INGREDIENTS) << " skladniki "  << endl << endl;
     for(unsigned int i=0; i < pizzas.size();i++){
+        cout << setw(3) << i+1 << " ";
         pizzas[i]->show();
     }
     cout << endl;
 }
 void menu::showDrinks(){
-    cout << left << setw(NAME) << " nazwa " << right << setw(PRICE) << " cena " << left << "     " << setw(SIZE) << " rozmiar "  << endl << endl;
+    cout << left << setw(3) << " nr." << setw(NAME) << " nazwa " << right << setw(PRICE) << " cena " << left << "     " << setw(SIZE) << " rozmiar "  << endl << endl;
     for (unsigned int i = 0; i < drinks.size() ; i++ ) {
+        cout << setw(3) << i+1 << " ";
         drinks[i]->show();
     }
     cout << endl;
@@ -136,10 +143,8 @@ void menu::showMenu(){
                     system("PAUSE");
                     system("cls");
 
-                    for(unsigned int i=0;i<howMuch;i++) {
+                    shopingCard.addCardPizza(*pizzas[number-1],howMuch);
 
-                        shopingCard.addCardPizza(*pizzas[number-1]);
-                    }
                     number=0;
                     howMuch=0;
                     break;
@@ -167,10 +172,8 @@ void menu::showMenu(){
                     system("PAUSE");
                     system("cls");
 
-                    for(unsigned int i=0;i<howMuch;i++) {
+                    shopingCard.addCardDrink(*drinks[number-1],howMuch);
 
-                        shopingCard.addCardDrink(*drinks[number-1]);
-                    }
                     number=0;
                     howMuch=0;
                     break;
@@ -198,11 +201,8 @@ void menu::showMenu(){
                     system("PAUSE");
                     system("cls");
 
+                    shopingCard.addCardMeal(*meals[number-1],howMuch);
 
-                    for(unsigned int i=0;i<howMuch;i++) {
-
-                        shopingCard.addCardMeal(*meals[number-1]);
-                    }
                     number=0;
                     howMuch=0;
                     break;

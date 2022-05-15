@@ -11,6 +11,7 @@ class card{
 private:
 
     double price;
+
     vector<pizza*> cardPizzas;
     vector<drink*> cardDrinks;
     vector<meal*> cardMeals;
@@ -18,9 +19,9 @@ private:
 public:
     card();
 
-    void addCardPizza(pizza &_pizza);
-    void addCardDrink(drink &_drink);
-    void addCardMeal(meal &_meal);
+    void addCardPizza(pizza &_pizza,unsigned int &_amount);
+    void addCardDrink(drink &_drink,unsigned int &_amount);
+    void addCardMeal(meal &_meal,unsigned int &_amount);
     double getPrice();
 
     void showPrice();
