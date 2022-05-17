@@ -22,4 +22,3 @@ herbata earl grey	8	0.25
 herbata zielona	8	0.25
 herbata mietowa	8	0.25
 herbata malinowa	8	0.25
-
