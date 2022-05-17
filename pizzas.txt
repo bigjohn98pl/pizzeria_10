@@ -28,4 +28,3 @@ GORSKA PODROZ	31.00	sos pomidorowy, ser mozarella, oscypek, zurawina, kozi ser, 
 VEGA FOOD	32.00	sos pomidorowy, ser mozarella, papryka, pieczarki, brokuly, kukurydza, cebula
 GRUCHA PIETRUCHA	32.00	sos pomidorowy, ser mozarella, gruszka, orzechy wloskie, rukola, gorgonzola, parmezan
 TWOJ SPECJAL	32.00	sos pomidorowy, ser mozarella, 5 skladnikow do wyboru(jedno miesne reszta warzywana)
-
