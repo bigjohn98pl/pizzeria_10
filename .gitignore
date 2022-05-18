@@ -52,6 +52,7 @@ Makefile
 Makefile.Debug
 Makefile.Release
 debug/
+release/
 debug/card.o
 debug/drink.o
 debug/main.o
