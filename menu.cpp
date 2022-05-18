@@ -38,49 +38,66 @@ void menu::addMeal(meal _meal){
     this->meals.push_back(new meal(_meal));
 }
 
+//take from http://stackoverflow.com/a/236803/248823
+void split(const string &s, char delim, vector<string> &elems) {
+   stringstream ss;
+   ss.str(s);
+   string item;
+   while (getline(ss, item, delim)) {
+       elems.push_back(item);
+   }
+}
+
 void menu::readPizzas(){
 
-    string name,ingredients,line;
-    string sPrice;
+    string line;
     double price;
-    ifstream  fin;
+    ifstream  file;
     unsigned int id =0;
-    fin.open("pizzas.txt");
-    if( fin.good() != true )
+    file.open("pizzas.txt");
+    if( file.good() != true )
     {
-        cout << "error - no such file or directory" << endl;
+        cout << "error - no such file or directory (pizzas.txt)" << endl;
+        system("PAUSE");
     }
 
-    while(!fin.eof()){
-        getline(fin, name,'\t');
-        getline(fin, sPrice,'\t');
-        getline(fin, ingredients);
-        price = stod(sPrice);
-        pizzas.push_back(new pizza(++id,name,price,ingredients));
+    while(getline(file, line)){
+        vector<string> pizzaData;
+        split(line,'\t',pizzaData);
+        if(pizzaData.size() >= 3){
+            price = stod(pizzaData[1]);
+            pizzas.push_back(new pizza(++id,pizzaData[0],price,pizzaData[2]));
+        }
     }
-    fin.close();
+
+    file.close();
 }
 
 void menu::readDrinks(){
 
-    string name,size, line, sPrice;
+    string line;
     double price;
-    ifstream  fin;
+    ifstream  file;
     unsigned int id =0;
-    fin.open("drinks.txt");
-    if( fin.good() != true )
+    file.open("drinks.txt");
+    if( file.good() != true )
     {
-        cout << "error - no such file or directory" << endl;
+        cout << "error - no such file or directory (drinks.txt)" << endl;
+        system("PAUSE");
     }
 
-    while (!fin.eof()) {
-        getline(fin, name,'\t');
-        getline(fin, sPrice,'\t');
-        getline(fin, size);
-        price= stod(sPrice);
-        drinks.push_back(new drink(++id,name,price,size));
+    while (getline(file,line)) {
+        vector<string> drinkData;
+        split(line,'\t',drinkData);
+        if(drinkData.size() >=3 ){
+            price= stod(drinkData[1]);
+            drinks.push_back(new drink(++id,drinkData[0],price,drinkData[2]));
+        }
+
+
     }
-    fin.close();
+
+    file.close();
 }
 void menu::showPizzas(){
     cout << left << setw(3) << " nr." << setw(NAME) << " nazwa " << right << setw(PRICE) << " cena " << left << "     " << setw(INGREDIENTS) << " skladniki "  << endl << endl;
