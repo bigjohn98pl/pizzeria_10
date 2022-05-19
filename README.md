@@ -3,12 +3,12 @@
 ### To do list
 
 * Funkcjonalności do wykonania:
-	-[x] pokazanie menu,
-	-[x] dodanie zamowienia do koszyka,
-	-[x] pokazanie koszyka,
-	-[ ] obliczenie ceny z uwzglednieniem promocji,
-	-[x] zamowienie,
-	-[ ] generowanie paragonu,
+	- [x] pokazanie menu,
+	- [x] dodanie zamowienia do koszyka,
+	- [x] pokazanie koszyka,
+	- [ ] obliczenie ceny z uwzglednieniem promocji,
+	- [x] zamowienie,
+	- [ ] generowanie paragonu,
 
 ### What is this repository for? ###
 
