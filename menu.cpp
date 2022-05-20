@@ -82,6 +82,21 @@ void menu::readDrinks(){
     }
     fin.close();
 }
+void menu::readSales(){
+    ifstream salesFile;
+    string line;
+    salesFile.open("sales.txt");
+    if( salesFile.good() != true )
+    {
+        cout << "error - no such file or directory" << endl;
+    }
+
+    while (getline(salesFile, line)) {
+        cout << line << endl;
+    }
+    salesFile.close();
+
+}
 void menu::showPizzas(){
     cout << left << setw(3) << " nr." << setw(NAME) << " nazwa " << right << setw(PRICE) << " cena " << left << "     " << setw(INGREDIENTS) << " skladniki "  << endl << endl;
     for(unsigned int i=0; i < pizzas.size();i++){
@@ -114,8 +129,9 @@ void menu::showMenu(){
         cout << "1. Lista Pizz" << endl;
         cout << "2. Lista napoji" << endl;
         cout << "3. Lista zestawów" << endl;
-        cout << "4. Koszyk" << endl;
-        cout << "5. Wyjdz" << endl;
+        cout << "4. Promocje" << endl;
+        cout << "5. Koszyk" << endl;
+        cout << "6. Wyjdz" << endl;
 
         cin >> clientChoose;
 
@@ -213,8 +229,12 @@ void menu::showMenu(){
                 }
             }
             break;
-
         case 4:
+            readSales();
+             system("PAUSE");
+             system("cls");
+            break;
+        case 5:
             shopingCard.showCard();
             cout << "1. Zamawiam" << endl;
             cout << "0. Powrot do menu" << endl;
@@ -231,7 +251,7 @@ void menu::showMenu(){
                 break;
             }
             break;
-        case 5:
+        case 6:
             shoudShopping = false;
             cout << "--------------------------------------------\n";
             cout << "Dziekujemy za zamowienie!" << endl;

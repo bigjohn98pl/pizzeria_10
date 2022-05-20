@@ -22,6 +22,7 @@ public:
     void addMeal(meal _meal);
     void readDrinks();
     void readPizzas();
+    void readSales();
     void showPizzas();
     void showDrinks();
     void showMeals();
