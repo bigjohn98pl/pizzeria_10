@@ -19,9 +19,12 @@ private:
 public:
     card();
 
-    void addCardPizza(pizza &_pizza,unsigned int &_amount);
-    void addCardDrink(drink &_drink,unsigned int &_amount);
+    void addCardPizza(pizza &_pizza,unsigned int &_amount,bool isFree);
+    void addCardDrink(drink &_drink,unsigned int &_amount, bool isFree);
     void addCardMeal(meal &_meal,unsigned int &_amount);
+    vector<pizza*>& getPizzas();
+    vector<drink*>& getDrinks();
+    vector<meal*>& getMeals();
     double getPrice();
 
     void showPrice();

@@ -137,10 +137,14 @@ void menu::showMenu(){
                     cout << "Podaj ilosc: ";
                     cin >> howMuch;
                     cout << "Dodano do koszyka" << endl;
+                    shopingCard.addCardPizza(*pizzas[number-1],howMuch,false);
+                    if(shopingCard.getPizzas().size() == 2){
+                        unsigned int darmowaKolka =1;
+                        shopingCard.addCardDrink(*drinks[0],darmowaKolka,true);
+                        cout << "Promocja! Za zakup dwoch pizz, dostajesz papsi gratis!" << endl;
+                    }
                     system("PAUSE");
                     system("cls");
-
-                    shopingCard.addCardPizza(*pizzas[number-1],howMuch);
 
                     number=0;
                     howMuch=0;
@@ -169,7 +173,7 @@ void menu::showMenu(){
                     system("PAUSE");
                     system("cls");
 
-                    shopingCard.addCardDrink(*drinks[number-1],howMuch);
+                    shopingCard.addCardDrink(*drinks[number-1],howMuch,false);
 
                     number=0;
                     howMuch=0;

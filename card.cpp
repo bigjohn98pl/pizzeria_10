@@ -5,18 +5,38 @@ card::card()
     price = 0;
 }
 
-void card::addCardPizza(pizza &_pizza,unsigned int &_amount){
+void card::addCardPizza(pizza &_pizza,unsigned int &_amount, bool isFree){
     this->cardPizzas.push_back(new pizza(_pizza,_amount));
-    this->price += _pizza.getPrice()*_amount;
+    if(!isFree){
+        this->price += _pizza.getPrice()*_amount;
+    }
+
 }
-void card::addCardDrink(drink &_drink,unsigned int &_amount){
+void card::addCardDrink(drink &_drink,unsigned int &_amount,bool isFree){
     this->cardDrinks.push_back(new drink(_drink,_amount));
-    this->price += _drink.getPrice()*_amount;
+
+    if(!isFree){
+        this->cardDrinks.back()->setIsFree(false);
+        this->price += _drink.getPrice()*_amount;
+    }
+    else{
+        this->cardDrinks.back()->setIsFree(true);
+    }
 }
 void card::addCardMeal(meal &_meal, unsigned int &_amount){
     this->cardMeals.push_back(new meal(_meal,_amount));
     this->price += _meal.getPrice()*_amount;
 }
+vector<pizza*>& card::getPizzas(){
+    return cardPizzas;
+}
+vector<drink*>& card::getDrinks(){
+    return cardDrinks;
+}
+vector<meal*>& card::getMeals(){
+    return cardMeals;
+}
+
 double card::getPrice(){
     return price;
 }
