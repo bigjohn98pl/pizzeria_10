@@ -1,4 +1,6 @@
-#include "card.hpp"
+#include "card.hpp"         //
+#include <time.h>           //
+#include <conio.h>
 
 card::card()
 {
@@ -68,10 +70,11 @@ void card::showCard(){
 
 void card::showReceipt(){
     cout << "#######################################################" << endl;
-    cout << "------PIZZERIA NAZWA JAKAS MA BYC----------------------" << endl << endl;
+    cout << endl;
+    cout << "-----------------PIZZERIA BIT PIZZA--------------------" << endl << endl;
     cout << "33-100, Tarnow, ul. Maslana 52" << endl;
     cout << "NIP: 420-21-37-666                              W208799" << endl;
-    cout << "                   PARAGON FISKALNY                    " << endl;
+    cout << endl << "                   PARAGON FISKALNY                    " << endl;
     cout << endl << endl;
     for(unsigned int i=0; i < cardPizzas.size();i++){
         cardPizzas[i]->show_2();
@@ -87,10 +90,19 @@ void card::showReceipt(){
     cout << endl;
     cout << endl;               //data godzina
     cout << "Suma: "<< setprecision(4) << price << "zl" << endl;
-    cout << "DO ZAPLATY: " << setprecision(4) << price << "zl" << endl;
-    //gotowka/karta/online
-    //data+godzina
-    cout << "AB34576965NJNJ7JBVHH45B6H47B7JNN8BVNK4YNBO7BN7NB854VNVF" << endl;
+    cout << endl << "DO ZAPLATY: " << setprecision(4) << price << "zl" << endl << endl;
+
+    time_t czas;                //
+    struct tm *data;              //
+    char godzina[80];           //
+    time(&czas);                //
+    data= localtime(&czas);      //
+    setlocale(LC_ALL, "Polish");    //
+    strftime(godzina, sizeof(godzina), "Data i godzina: %c", data);    //
+    cout << godzina;                //
+
+    cout << endl << endl << "AB34576965NJNJ7JBVHH45B6H47B7JNN8BVNK4YNBO7BN7NB854VNVF" << endl;
     cout << "Nr Sys.:                                    FPP PA:Data" << endl;
     cout << "#######################################################" << endl;
+    getch();
 }

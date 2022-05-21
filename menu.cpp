@@ -127,8 +127,8 @@ void menu::showMenu(){
     while(shoudShopping){
 
         cout << "1. Lista Pizz" << endl;
-        cout << "2. Lista napoji" << endl;
-        cout << "3. Lista zestawów" << endl;
+        cout << "2. Lista napoi" << endl;
+        cout << "3. Lista zestawow" << endl;
         cout << "4. Promocje" << endl;
         cout << "5. Koszyk" << endl;
         cout << "6. Wyjdz" << endl;
