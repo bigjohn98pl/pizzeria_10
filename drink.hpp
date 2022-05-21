@@ -11,6 +11,7 @@ private:
     string* name;
     double* price;
     string* size;
+    bool *isFree;
 
 public:
 
@@ -22,6 +23,8 @@ public:
     double getPrice();
     unsigned int getId();
     unsigned int getAmount();
+    bool getIsFree(){return isFree;};
+    void setIsFree(const bool &set){*isFree = set;};
     void set(string& _name,double& _price, string& _size);
     void setAmount(unsigned int &_amount);
     ~drink();

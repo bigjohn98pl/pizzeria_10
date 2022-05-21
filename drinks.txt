@@ -9,14 +9,12 @@ sok grejpfrutowy	6	0.25
 sok jablkowy	6	0.25
 woda niegazowana	5	0.33
 woda gazowana	5	0.33
-
 kawa czarna	8	0.2
 kawa biala	8	0.2
 cappucino	9	0.2
 latte	10	0.25
 latte machiatto	11	0.25
 kawa mrozona	11	0.3
-
 herbata czarna	8	0.25
 herbata earl grey	8	0.25
 herbata zielona	8	0.25
