@@ -26,6 +26,8 @@ public:
     vector<drink*>& getDrinks();
     vector<meal*>& getMeals();
     double getPrice();
+    void setPrice20();
+    bool checkCardPrice();
 
     void showPrice();
     void showCard();

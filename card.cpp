@@ -42,7 +42,17 @@ vector<meal*>& card::getMeals(){
 double card::getPrice(){
     return price;
 }
-
+void card::setPrice20(){
+    price = price - price * 0.2;
+}
+bool card::checkCardPrice(){
+    if(price >= 100.00){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 void card::showPrice(){
     cout << "-----------------------------" << endl;
     cout << "Do zaplaty: "<< price << endl;
@@ -64,7 +74,13 @@ void card::showCard(){
     }
     cout << endl;
 
-    cout << "LACZNA CENA: " << right << setw(NAME+PRICE+3) << setprecision(2) << price << endl;
+    if(price >= 100.00){
+        cout << "Cena promocyjna!" << endl;
+        cout << "LACZNA CENA (-20%): " << right << setw(NAME+PRICE+3) << setprecision(2) << price - price * 0.2 << " zl" << endl;
+    }
+    else{
+        cout << "LACZNA CENA: " << right << setw(NAME+PRICE+3) << setprecision(2) << price << " zl" << endl;
+    }
     cout << "#######################################################" << endl;
 }
 
@@ -89,8 +105,8 @@ void card::showReceipt(){
     }
     cout << endl;
     cout << endl;               //data godzina
-    cout << "Suma: "<< setprecision(4) << price << "zl" << endl;
-    cout << endl << "DO ZAPLATY: " << setprecision(4) << price << "zl" << endl << endl;
+    cout << "Suma: "<< setprecision(2) << price << "zl" << endl;
+    cout << endl << "DO ZAPLATY: " << setprecision(2) << price << "zl" << endl << endl;
 
     time_t czas;                //
     struct tm *data;              //
