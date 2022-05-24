@@ -40,12 +40,12 @@ void menu::addMeal(meal _meal){
 
 //take from http://stackoverflow.com/a/236803/248823
 void split(const string &s, char delim, vector<string> &elems) {
-   stringstream ss;
-   ss.str(s);
-   string item;
-   while (getline(ss, item, delim)) {
-       elems.push_back(item);
-   }
+    stringstream ss;
+    ss.str(s);
+    string item;
+    while (getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
 }
 
 void menu::readPizzas(){
@@ -231,14 +231,28 @@ void menu::showMenu(){
                     cin >> number;
                     cout << "Podaj ilosc: ";
                     cin >> howMuch;
+                    shopingCard.addCardMeal(*meals[number-1],howMuch);
+
+                    if(shopingCard.getMeals().size()>2 || howMuch > 2){
+                        cout << "Chcesz skorzystac z promocji 50/50?" << endl;
+                        cout << "1.Tak" << endl << "2.Nie" << endl;
+                        cin >> clientChoose;
+
+                        if(clientChoose==1){
+                                this->showMeals();
+                                cout << "Wybierz trzeci zestaw o 50% tanszy" << endl;
+                                cin >> number;
+
+                                shopingCard.addCardMeal(*meals[number-1],1);
+                        }
+                    }
                     cout << "Dodano do koszyka" << endl;
                     system("PAUSE");
                     system("cls");
 
-                    shopingCard.addCardMeal(*meals[number-1],howMuch);
-
                     number=0;
                     howMuch=0;
+
                     break;
                 case 0:
 
@@ -248,8 +262,8 @@ void menu::showMenu(){
             break;
         case 4:
             readSales();
-             system("PAUSE");
-             system("cls");
+            system("PAUSE");
+            system("cls");
             break;
         case 5:
             shopingCard.showCard();
@@ -257,9 +271,10 @@ void menu::showMenu(){
             cout << "0. Powrot do menu" << endl;
             cin >> clientChoose;
             system("cls");
-                                                     //zmien zamowienie????? dodajemY???
+            //zmien zamowienie????? dodajemY???
             switch(clientChoose){
             case 1:
+
                 shopingCard.showReceipt();
                 break;
             case 0:

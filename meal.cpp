@@ -11,7 +11,7 @@ meal::meal()
     *amount =0;
     *id=0;
 }
-meal::meal(meal &copy,unsigned int &_amount)
+meal::meal(meal &copy,const unsigned int &_amount)
 {
     id = new unsigned int;
     amount = new unsigned int;

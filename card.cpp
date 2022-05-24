@@ -25,7 +25,7 @@ void card::addCardDrink(drink &_drink,unsigned int &_amount,bool isFree){
         this->cardDrinks.back()->setIsFree(true);
     }
 }
-void card::addCardMeal(meal &_meal, unsigned int &_amount){
+void card::addCardMeal(meal &_meal,const unsigned int &_amount){
     this->cardMeals.push_back(new meal(_meal,_amount));
     this->price += _meal.getPrice()*_amount;
 }
@@ -96,15 +96,12 @@ void card::showReceipt(){
     for(unsigned int i=0; i < cardPizzas.size();i++){
         cardPizzas[i]->show_2();
     }
-    cout << endl;
     for(unsigned int i=0; i < cardDrinks.size();i++){
         cardDrinks[i]->show_2();
     }
-    cout << endl;
     for(unsigned int i=0; i < cardMeals.size();i++){
         cardMeals[i]->show();
     }
-    cout << endl;
     if(checkCardPrice()){
         cout << "Rabat: " << right << setw(NAME+PRICE+3+8) << (price * 0.2)*(-1) << " zl" << endl;
         setPrice20();
