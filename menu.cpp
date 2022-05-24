@@ -260,9 +260,6 @@ void menu::showMenu(){
                                                      //zmien zamowienie????? dodajemY???
             switch(clientChoose){
             case 1:
-                if(shopingCard.checkCardPrice()){
-                    shopingCard.setPrice20();
-                }
                 shopingCard.showReceipt();
                 break;
             case 0:

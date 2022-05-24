@@ -46,7 +46,7 @@ void card::setPrice20(){
     price = price - price * 0.2;
 }
 bool card::checkCardPrice(){
-    if(price >= 100.00){
+    if(price > 100.00){
         return true;
     }
     else{
@@ -74,7 +74,8 @@ void card::showCard(){
     }
     cout << endl;
 
-    if(price >= 100.00){
+    if(checkCardPrice()){
+
         cout << "Cena promocyjna!" << endl;
         cout << "LACZNA CENA (-20%): " << right << setw(NAME+PRICE+3) << setprecision(2) << price - price * 0.2 << " zl" << endl;
     }
@@ -104,18 +105,20 @@ void card::showReceipt(){
         cardMeals[i]->show();
     }
     cout << endl;
-    cout << endl;               //data godzina
-    cout << "Suma: "<< setprecision(2) << price << "zl" << endl;
-    cout << endl << "DO ZAPLATY: " << setprecision(2) << price << "zl" << endl << endl;
+    if(checkCardPrice()){
+        cout << "Rabat: " << right << setw(NAME+PRICE+3+8) << (price * 0.2)*(-1) << " zl" << endl;
+        setPrice20();
+    }
+    cout << endl << "DO ZAPLATY: " << right << setw(NAME+PRICE+6) << setprecision(2) << price << " zl" << endl << endl;
 
-    time_t czas;                //
-    struct tm *data;              //
-    char godzina[80];           //
-    time(&czas);                //
-    data= localtime(&czas);      //
-    setlocale(LC_ALL, "Polish");    //
-    strftime(godzina, sizeof(godzina), "Data i godzina: %c", data);    //
-    cout << godzina;                //
+    time_t czas;
+    struct tm *data;
+    char godzina[80];
+    time(&czas);
+    data= localtime(&czas);
+    setlocale(LC_ALL, "Polish");
+    strftime(godzina, sizeof(godzina), "Data i godzina: %c", data);
+    cout << godzina;
 
     cout << endl << endl << "AB34576965NJNJ7JBVHH45B6H47B7JNN8BVNK4YNBO7BN7NB854VNVF" << endl;
     cout << "Nr Sys.:                                    FPP PA:Data" << endl;
