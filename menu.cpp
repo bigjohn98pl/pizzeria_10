@@ -174,7 +174,7 @@ void menu::showMenu(){
                     if(shopingCard.getPizzas().size() == 2){
                         unsigned int darmowaKolka =1;
                         shopingCard.addCardDrink(*drinks[0],darmowaKolka,true);
-                        cout << "Promocja! Za zakup dwoch pizz, dostajesz papsi gratis!" << endl;
+                        cout << "Promocja! Za zakup dwoch roznych pizz, dostajesz papsi gratis!" << endl;
                     }
                     system("PAUSE");
                     system("cls");
@@ -232,8 +232,9 @@ void menu::showMenu(){
                     cout << "Podaj ilosc: ";
                     cin >> howMuch;
                     shopingCard.addCardMeal(*meals[number-1],howMuch);
-
-                    if(shopingCard.getMeals().size()>2 || howMuch > 2){
+                    system("PAUSE");
+                    system("cls");
+                    if(shopingCard.getMeals().size()==2 || howMuch > 2){
                         cout << "Chcesz skorzystac z promocji 50/50?" << endl;
                         cout << "1.Tak" << endl << "2.Nie" << endl;
                         cin >> clientChoose;

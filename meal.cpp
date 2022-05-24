@@ -63,6 +63,9 @@ void meal::addDrink(drink *_drink, unsigned int _amount){
 double meal::getPrice(){
     return *this->price;
 }
+void meal::setPrice(double _price){
+    *this->price = _price;
+}
 unsigned int meal::getId(){
     return *id;
 }

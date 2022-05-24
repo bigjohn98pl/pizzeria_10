@@ -1,5 +1,5 @@
-#include "card.hpp"         //
-#include <time.h>           //
+#include "card.hpp"
+#include <time.h>
 #include <conio.h>
 
 card::card()
@@ -27,7 +27,13 @@ void card::addCardDrink(drink &_drink,unsigned int &_amount,bool isFree){
 }
 void card::addCardMeal(meal &_meal,const unsigned int &_amount){
     this->cardMeals.push_back(new meal(_meal,_amount));
-    this->price += _meal.getPrice()*_amount;
+    if(checkHalfMealPrice()){
+        _meal.setPrice(_meal.getPrice()/2);
+        this->price += _meal.getPrice();
+    }
+    else{
+        this->price += _meal.getPrice()*_amount;
+    }
 }
 vector<pizza*>& card::getPizzas(){
     return cardPizzas;
@@ -53,6 +59,15 @@ bool card::checkCardPrice(){
         return false;
     }
 }
+bool card::checkHalfMealPrice(){
+    if(cardMeals.size() == 3){
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 void card::showPrice(){
     cout << "-----------------------------" << endl;
     cout << "Do zaplaty: "<< price << endl;
@@ -74,7 +89,7 @@ void card::showCard(){
     }
     cout << endl;
 
-    if(checkCardPrice()){
+    if(checkCardPrice() && !checkHalfMealPrice()){
 
         cout << "Cena promocyjna!" << endl;
         cout << "LACZNA CENA (-20%): " << right << setw(NAME+PRICE+3) << setprecision(2) << price - price * 0.2 << " zl" << endl;
@@ -102,7 +117,7 @@ void card::showReceipt(){
     for(unsigned int i=0; i < cardMeals.size();i++){
         cardMeals[i]->show();
     }
-    if(checkCardPrice()){
+    if(checkCardPrice() && !checkHalfMealPrice()){
         cout << "Rabat: " << right << setw(NAME+PRICE+3+8) << (price * 0.2)*(-1) << " zl" << endl;
         setPrice20();
     }
