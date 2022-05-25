@@ -35,7 +35,6 @@ public:
     void setSaleFreeDrink(const bool &set){saleFreeDrink = set;};
     void setSaleOff20(const bool &set){saleOff20 = set;};
     void setSaleFifFif(const bool &set){saleFifFif = set;};
-
     void showPrice();
     void showCard();
     void showReceipt();

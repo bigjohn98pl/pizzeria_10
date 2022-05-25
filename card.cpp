@@ -132,6 +132,7 @@ void card::showReceipt(){
         //cout << setw(15) << "Rabat: " << *id << setw(NAME) <<  *price << " x " << *amount << " = " << *price * static_cast<double>(*amount) << " zl" << endl;
         setPrice20();
     }
+
     cout << endl << "DO ZAPLATY: " << right << setw(NAME+PRICE+6) << setprecision(2) << price << " zl" << endl << endl;
 
     time_t czas;
