@@ -5,6 +5,7 @@
 card::card()
 {
     price = 0;
+    saleFreeDrink = saleOff20 = saleFifFif = false;
 }
 
 void card::addCardPizza(pizza &_pizza,unsigned int &_amount, bool isFree){
@@ -25,9 +26,16 @@ void card::addCardDrink(drink &_drink,unsigned int &_amount,bool isFree){
         this->cardDrinks.back()->setIsFree(true);
     }
 }
-void card::addCardMeal(meal &_meal, unsigned int &_amount){
-    this->cardMeals.push_back(new meal(_meal,_amount));
-    this->price += _meal.getPrice()*_amount;
+void card::addCardMeal(meal _meal,const unsigned int &_amount){
+    if(saleFifFif){
+        _meal.setPrice(_meal.getPrice()/2);
+        this->cardMeals.push_back(new meal(_meal,_amount));
+        this->price += _meal.getPrice();
+    }
+    else{
+        this->cardMeals.push_back(new meal(_meal,_amount));
+        this->price += _meal.getPrice()*_amount;
+    }
 }
 vector<pizza*>& card::getPizzas(){
     return cardPizzas;
@@ -38,18 +46,35 @@ vector<drink*>& card::getDrinks(){
 vector<meal*>& card::getMeals(){
     return cardMeals;
 }
-
 double card::getPrice(){
     return price;
 }
 void card::setPrice20(){
     price = price - price * 0.2;
 }
+
+bool card::check2PizzasFreeDrink(){
+    if(cardPizzas.size() == 2 || cardPizzas.back()->getAmount() >= 2){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 bool card::checkCardPrice(){
     if(price >= 100.00){
         return true;
     }
     else{
+        return false;
+    }
+}
+bool card::checkHalfMealPrice(){
+    if(cardMeals.size() == 2 || cardMeals.back()->getAmount() >=2){
+        return true;
+    }
+    else
+    {
         return false;
     }
 }
@@ -70,11 +95,11 @@ void card::showCard(){
     }
     cout << endl;
     for(unsigned int i=0; i < cardMeals.size();i++){
-        cardMeals[i]->show();
+        cardMeals[i]->show_2();
     }
     cout << endl;
 
-    if(price >= 100.00){
+    if(saleOff20 ){
         cout << "Cena promocyjna!" << endl;
         cout << "LACZNA CENA (-20%): " << right << setw(NAME+PRICE+3) << setprecision(2) << price - price * 0.2 << " zl" << endl;
     }
@@ -101,12 +126,16 @@ void card::showReceipt(){
     }
     cout << endl;
     for(unsigned int i=0; i < cardMeals.size();i++){
-        cardMeals[i]->show();
+        cardMeals[i]->showReceipt();
     }
-    cout << endl;
-    cout << endl;               //data godzina
-    cout << "Suma: "<< setprecision(2) << price << "zl" << endl;
-    cout << endl << "DO ZAPLATY: " << setprecision(2) << price << "zl" << endl << endl;
+
+    if(saleOff20){
+        cout << setw(15) << "Rabat: " << right << setw(NAME+PRICE+3) << (price * 0.2)*(-1) << " zl" << endl;
+        //cout << setw(15) << "Rabat: " << *id << setw(NAME) <<  *price << " x " << *amount << " = " << *price * static_cast<double>(*amount) << " zl" << endl;
+        setPrice20();
+    }
+
+    cout << endl << "DO ZAPLATY: " << right << setw(NAME+PRICE+6) << setprecision(2) << price << " zl" << endl << endl;
 
     time_t czas;                //
     struct tm *data;              //

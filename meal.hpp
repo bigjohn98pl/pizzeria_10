@@ -26,6 +26,8 @@ public:
     void addDrink(drink *_drink);
     void addDrink(drink *_drink, unsigned int _amount);
     void show();
+    void show_2();
+    void showReceipt();
     double getPrice();
     unsigned int getId();
     unsigned int getAmount();

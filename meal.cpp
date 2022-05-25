@@ -80,5 +80,22 @@ void meal::show(){
         this->drinks[i]->show_2();
     }
     cout << endl;
-    cout << setw(15) << "CENA ZA ZESTAW: " << setw(15) << *price << " x " << *amount << " = " << *price * static_cast<double>(*amount) << " zl" << endl;
+    cout << setw(15) << "CENA ZA ZESTAW: " << setw(NAME+PRICE) << right << *price << " zl" << endl;
+}
+
+void meal::show_2(){
+    cout << "================== Zestaw: " << *id << "=======================" << endl;
+    cout << left << setw(NAME) << "nazwa" << setw(PRICE) <<  "cena" << endl << endl;
+    for (unsigned int i = 0;i < this->pizzas.size() ; i++ ) {
+        this->pizzas[i]->show_2();
+    }
+    for (unsigned int i = 0;i < this->drinks.size() ; i++ ) {
+        this->drinks[i]->show_2();
+    }
+    cout << endl;
+    cout << setw(15) << "CENA ZA ZESTAW: " << setw(NAME) <<  *price << " x " << *amount << " = " << *price * static_cast<double>(*amount) << " zl" << endl;
+}
+
+void meal::showReceipt(){
+    cout << setw(15) << "Zestaw: " << *id << setw(NAME) <<  *price << " x " << *amount << " = " << *price * static_cast<double>(*amount) << " zl" << endl;
 }
