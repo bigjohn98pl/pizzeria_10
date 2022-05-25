@@ -59,10 +59,10 @@ void menu::readPizzas(){
     double price;
     ifstream  file;
     unsigned int id =0;
-    file.open("pizzas.txt");
+    file.open("dataBase/pizzas.txt");
     if( file.good() != true )
     {
-        cout << "error - no such file or directory (pizzas.txt)" << endl;
+        cout << "error - no such file or directory (dataBase/pizzas.txt)" << endl;
         system("PAUSE");
     }
 
@@ -84,10 +84,10 @@ void menu::readDrinks(){
     double price;
     ifstream  file;
     unsigned int id =0;
-    file.open("drinks.txt");
+    file.open("dataBase/drinks.txt");
     if( file.good() != true )
     {
-        cout << "error - no such file or directory (drinks.txt)" << endl;
+        cout << "error - no such file or directory (dataBase/drinks.txt)" << endl;
         system("PAUSE");
     }
 
@@ -107,10 +107,10 @@ void menu::readDrinks(){
 void menu::readSales(){
     ifstream salesFile;
     string line;
-    salesFile.open("sales.txt");
+    salesFile.open("dataBase/sales.txt");
     if( salesFile.good() != true )
     {
-        cout << "error - no such file or directory (meals.txt)" << endl;
+        cout << "error - no such file or directory (dataBase/sales.txt)" << endl;
     }
 
     while (getline(salesFile, line)) {
@@ -177,7 +177,7 @@ void menu::showMenu(){
                     cout << "Dodano do koszyka" << endl;
                     shopingCard.addCardPizza(*pizzas[number-1],howMuch,false);
 
-                    if(shopingCard.check2PizzasFreeDrink()){
+                    if(shopingCard.check2PizzasFreeDrink() && !shopingCard.getSaleFreeDrink()){
                         cout << "Promocja! Za zakup dwoch roznych pizz, dostajesz papsi gratis!" << endl;
                         cout << "Chcesz skorzystac z promocji?" << endl;
                         cout << "1.Tak" << endl << "2.Nie" << endl;
@@ -250,7 +250,7 @@ void menu::showMenu(){
                     shopingCard.addCardMeal(*meals[number-1],howMuch);
                     system("PAUSE");
                     system("cls");
-                    if(shopingCard.checkHalfMealPrice()){
+                    if(shopingCard.checkHalfMealPrice() && !shopingCard.getSaleFifFif()){
                         cout << "Chcesz skorzystac z promocji 50/50?" << endl;
                         cout << "1.Tak" << endl << "2.Nie" << endl;
                         cin >> clientChoose;
