@@ -2,17 +2,13 @@
 
 ### To do list
 
-* Stworzyc klase pizza, napoj i promocja
-
-* Tworzyc 3 pliki tekstowe ktore beda zawierac baze danych pizzeri
-
 * Funkcjonalności do wykonania:
-	- pokazanie menu,
-	- dodanie zamowienia do koszyka,
-	- pokazanie koszyka,
-	- obliczenie ceny z uwzglednieniem promocji,
-	- zamowienie,
-	- generowanie paragonu,
+	- [x] pokazanie menu,
+	- [x] dodanie zamowienia do koszyka,
+	- [x] pokazanie koszyka,
+	- [ ] obliczenie ceny z uwzglednieniem promocji,
+	- [x] zamowienie,
+	- [ ] generowanie paragonu,
 
 ### What is this repository for? ###
 
