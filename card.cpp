@@ -1,5 +1,5 @@
-#include "card.hpp"         //
-#include <time.h>           //
+#include "card.hpp"
+#include <time.h>
 #include <conio.h>
 
 card::card()
@@ -62,7 +62,7 @@ bool card::check2PizzasFreeDrink(){
     }
 }
 bool card::checkCardPrice(){
-    if(price >= 100.00){
+    if(price > 100.00){
         return true;
     }
     else{
@@ -120,11 +120,9 @@ void card::showReceipt(){
     for(unsigned int i=0; i < cardPizzas.size();i++){
         cardPizzas[i]->show_2();
     }
-    cout << endl;
     for(unsigned int i=0; i < cardDrinks.size();i++){
         cardDrinks[i]->show_2();
     }
-    cout << endl;
     for(unsigned int i=0; i < cardMeals.size();i++){
         cardMeals[i]->showReceipt();
     }
@@ -134,17 +132,16 @@ void card::showReceipt(){
         //cout << setw(15) << "Rabat: " << *id << setw(NAME) <<  *price << " x " << *amount << " = " << *price * static_cast<double>(*amount) << " zl" << endl;
         setPrice20();
     }
-
     cout << endl << "DO ZAPLATY: " << right << setw(NAME+PRICE+6) << setprecision(2) << price << " zl" << endl << endl;
 
-    time_t czas;                //
-    struct tm *data;              //
-    char godzina[80];           //
-    time(&czas);                //
-    data= localtime(&czas);      //
-    setlocale(LC_ALL, "Polish");    //
-    strftime(godzina, sizeof(godzina), "Data i godzina: %c", data);    //
-    cout << godzina;                //
+    time_t czas;
+    struct tm *data;
+    char godzina[80];
+    time(&czas);
+    data= localtime(&czas);
+    setlocale(LC_ALL, "Polish");
+    strftime(godzina, sizeof(godzina), "Data i godzina: %c", data);
+    cout << godzina;
 
     cout << endl << endl << "AB34576965NJNJ7JBVHH45B6H47B7JNN8BVNK4YNBO7BN7NB854VNVF" << endl;
     cout << "Nr Sys.:                                    FPP PA:Data" << endl;

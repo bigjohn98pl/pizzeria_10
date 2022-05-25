@@ -11,7 +11,7 @@ meal::meal()
     *amount =0;
     *id=0;
 }
-meal::meal(meal &copy,unsigned int &_amount)
+meal::meal(meal &copy,const unsigned int &_amount)
 {
     id = new unsigned int;
     amount = new unsigned int;
@@ -62,6 +62,9 @@ void meal::addDrink(drink *_drink, unsigned int _amount){
 
 double meal::getPrice(){
     return *this->price;
+}
+void meal::setPrice(double _price){
+    *this->price = _price;
 }
 unsigned int meal::getId(){
     return *id;

@@ -18,7 +18,7 @@ int main()
             "                                "  <<   "         G&!.:J5^~#G5YYYYYP&P" << endl <<
             "                                "  <<   "          B&~...:#GYYYYYYP&B " << endl <<
             "   -------------------------    "  <<   "          .##^..^&PYYYYY5&#. " << endl <<
-            " | Witamy w naszej Pizzerii ! |  "  <<   "           .&B:..YPYYYY5##. " << endl <<
+            " | Witamy w naszej Pizzerii ! | "  <<   "           .&B:..YPYYYY5##. " << endl <<
             "   -------------------------    "  <<   "            :&B:..^BBP5#&:   " << endl <<
             "                                "  <<   "             ~&P..~?YP&&~ " << endl <<
             "                                "  <<   "              !&5!#B!P&!" << endl <<

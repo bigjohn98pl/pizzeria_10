@@ -27,7 +27,6 @@ public:
     double getPrice();
     void setPrice20();
     bool checkCardPrice();
-
     bool checkHalfMealPrice();
     bool check2PizzasFreeDrink();
     bool getSaleFreeDrink(){return saleFreeDrink;};

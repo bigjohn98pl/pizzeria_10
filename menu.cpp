@@ -45,12 +45,12 @@ void menu::addMeal(meal _meal){
 
 //take from http://stackoverflow.com/a/236803/248823
 void split(const string &s, char delim, vector<string> &elems) {
-   stringstream ss;
-   ss.str(s);
-   string item;
-   while (getline(ss, item, delim)) {
-       elems.push_back(item);
-   }
+    stringstream ss;
+    ss.str(s);
+    string item;
+    while (getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
 }
 
 void menu::readPizzas(){
@@ -176,12 +176,6 @@ void menu::showMenu(){
                     cin >> howMuch;
                     cout << "Dodano do koszyka" << endl;
                     shopingCard.addCardPizza(*pizzas[number-1],howMuch,false);
-<<<<<<< Updated upstream
-                    if(shopingCard.getPizzas().size() == 2){
-                        unsigned int darmowaKolka =1;
-                        shopingCard.addCardDrink(*drinks[0],darmowaKolka,true);
-                        cout << "Promocja! Za zakup dwoch pizz, dostajesz papsi gratis!" << endl;
-=======
 
                     if(shopingCard.check2PizzasFreeDrink()){
                         cout << "Promocja! Za zakup dwoch roznych pizz, dostajesz papsi gratis!" << endl;
@@ -196,7 +190,6 @@ void menu::showMenu(){
                             shopingCard.setSaleFreeDrink(true);
                             shopingCard.addCardDrink(*drinks[0],darmowaKolka,true);
                         }
->>>>>>> Stashed changes
                     }
                     system("PAUSE");
                     system("cls");
@@ -253,8 +246,7 @@ void menu::showMenu(){
                     cin >> number;
                     cout << "Podaj ilosc: ";
                     cin >> howMuch;
-<<<<<<< Updated upstream
-=======
+
                     shopingCard.addCardMeal(*meals[number-1],howMuch);
                     system("PAUSE");
                     system("cls");
@@ -274,15 +266,13 @@ void menu::showMenu(){
                             shopingCard.addCardMeal(*meals[number-1],1);
                         }
                     }
->>>>>>> Stashed changes
                     cout << "Dodano do koszyka" << endl;
                     system("PAUSE");
                     system("cls");
 
-                    shopingCard.addCardMeal(*meals[number-1],howMuch);
-
                     number=0;
                     howMuch=0;
+
                     break;
                 case 0:
 
@@ -292,28 +282,10 @@ void menu::showMenu(){
             break;
         case 4:
             readSales();
-             system("PAUSE");
-             system("cls");
+            system("PAUSE");
+            system("cls");
             break;
         case 5:
-<<<<<<< Updated upstream
-            shopingCard.showCard();
-            cout << "1. Zamawiam" << endl;
-            cout << "0. Powrot do menu" << endl;
-            cin >> clientChoose;
-            system("cls");
-                                                     //zmien zamowienie????? dodajemY???
-            switch(clientChoose){
-            case 1:
-                if(shopingCard.checkCardPrice()){
-                    shopingCard.setPrice20();
-                }
-                shopingCard.showReceipt();
-                break;
-            case 0:
-
-                break;
-=======
 
             while(clientChoose != 0){
                 if(shopingCard.checkCardPrice() && !shopingCard.getSaleOff20()){
@@ -343,7 +315,6 @@ void menu::showMenu(){
                 case 0:
                     break;
                 }
->>>>>>> Stashed changes
             }
             break;
         case 6:
