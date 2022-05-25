@@ -21,6 +21,7 @@ public:
     void addCardPizza(pizza &_pizza, unsigned int &_amount, bool isFree);
     void addCardDrink(drink &_drink, unsigned int &_amount, bool isFree);
     void addCardMeal(meal _meal, const unsigned int &_amount);
+    void clearCard();
     vector<pizza*>& getPizzas();
     vector<drink*>& getDrinks();
     vector<meal*>& getMeals();

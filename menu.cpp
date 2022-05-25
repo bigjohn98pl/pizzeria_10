@@ -305,12 +305,16 @@ void menu::showMenu(){
                 }
                 shopingCard.showCard();
                 cout << "1. Kupuje" << endl;
+                cout << "2. Wyczysc koszyk" << endl;
                 cout << "0. Powrot do menu" << endl;
                 cin >> clientChoose;
                 system("cls");
                 switch(clientChoose){
                 case 1:
                     shopingCard.showReceipt();
+                    break;
+                case 2:
+                    shopingCard.clearCard();
                     break;
                 case 0:
                     break;

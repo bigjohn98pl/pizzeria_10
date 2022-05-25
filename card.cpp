@@ -37,6 +37,13 @@ void card::addCardMeal(meal _meal,const unsigned int &_amount){
         this->price += _meal.getPrice()*_amount;
     }
 }
+void card::clearCard(){
+    cardPizzas.clear();
+    cardDrinks.clear();
+    cardMeals.clear();
+    price = 0;
+    saleFifFif = saleFreeDrink = saleOff20 = false;
+}
 vector<pizza*>& card::getPizzas(){
     return cardPizzas;
 }
