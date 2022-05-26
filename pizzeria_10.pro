@@ -4,4 +4,17 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        card.cpp \
+        drink.cpp \
+        main.cpp \
+        meal.cpp \
+        menu.cpp \
+        pizza.cpp
+
+HEADERS += \
+    card.hpp \
+    drink.hpp \
+    header.hpp \
+    meal.hpp \
+    menu.hpp \
+    pizza.hpp
