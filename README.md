@@ -64,6 +64,7 @@ Analogicznie jak w opcji 1 głównego menu, wyświetlana jest lista napoi, w kt�
 `Opcja 3`
 
  Funkcja wyświetla gotowe zestawy, które można zamówić i wybrać ich ilość.
+ 
 --- 
 `Opcja 4`  
 
@@ -82,6 +83,7 @@ Tutaj znajduje się podmenu, które zawiera opcje:
 `0. Powrot do menu`
 
 Po wybraniu 1 numeru wyświetlany jest paragon i suma do zapłaty.
+
 --- 
 `Opcja 6` 
 
