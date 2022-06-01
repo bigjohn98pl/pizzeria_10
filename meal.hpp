@@ -18,7 +18,7 @@ public:
 
     meal();
     meal(const unsigned int _id);
-    meal(meal &copy,unsigned int &_amount);
+    meal(meal &copy,const unsigned int &_amount);
     meal(const unsigned int &_id,pizza *_pizza,unsigned int &pizzaAmount,drink *_drink, unsigned int &drinkAmount);
     ~meal();
     void addPizza(pizza *_pizza);
@@ -26,7 +26,10 @@ public:
     void addDrink(drink *_drink);
     void addDrink(drink *_drink, unsigned int _amount);
     void show();
+    void show_2();
+    void showReceipt();
     double getPrice();
+    void setPrice(double _price);
     unsigned int getId();
     unsigned int getAmount();
 };

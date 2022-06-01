@@ -15,10 +15,15 @@ menu::menu()
     meal2.addDrink(drinks[0],1);
 
     meal3.addPizza(pizzas[2],1);
-    meal3.addDrink(drinks[0],2);
+    meal3.addDrink(drinks[3],2);
 
     meal4.addPizza(pizzas[5],2);
-    meal4.addDrink(drinks[3],2);
+    meal4.addDrink(drinks[2],2);
+
+    meal1.setPrice( meal1.getPrice() - (meal1.getPrice() * 0.1));
+    meal2.setPrice( meal2.getPrice() - (meal2.getPrice() * 0.1));
+    meal3.setPrice( meal3.getPrice() - (meal3.getPrice() * 0.1));
+    meal4.setPrice( meal4.getPrice() - (meal4.getPrice() * 0.1));
 
     this->addMeal(meal1);
     this->addMeal(meal2);
@@ -40,12 +45,12 @@ void menu::addMeal(meal _meal){
 
 //take from http://stackoverflow.com/a/236803/248823
 void split(const string &s, char delim, vector<string> &elems) {
-   stringstream ss;
-   ss.str(s);
-   string item;
-   while (getline(ss, item, delim)) {
-       elems.push_back(item);
-   }
+    stringstream ss;
+    ss.str(s);
+    string item;
+    while (getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
 }
 
 void menu::readPizzas(){
@@ -54,10 +59,10 @@ void menu::readPizzas(){
     double price;
     ifstream  file;
     unsigned int id =0;
-    file.open("pizzas.txt");
+    file.open("dataBase/pizzas.txt");
     if( file.good() != true )
     {
-        cout << "error - no such file or directory (pizzas.txt)" << endl;
+        cout << "error - no such file or directory (dataBase/pizzas.txt)" << endl;
         system("PAUSE");
     }
 
@@ -79,10 +84,10 @@ void menu::readDrinks(){
     double price;
     ifstream  file;
     unsigned int id =0;
-    file.open("drinks.txt");
+    file.open("dataBase/drinks.txt");
     if( file.good() != true )
     {
-        cout << "error - no such file or directory (drinks.txt)" << endl;
+        cout << "error - no such file or directory (dataBase/drinks.txt)" << endl;
         system("PAUSE");
     }
 
@@ -98,6 +103,21 @@ void menu::readDrinks(){
     }
 
     file.close();
+}
+void menu::readSales(){
+    ifstream salesFile;
+    string line;
+    salesFile.open("dataBase/sales.txt");
+    if( salesFile.good() != true )
+    {
+        cout << "error - no such file or directory (dataBase/sales.txt)" << endl;
+    }
+
+    while (getline(salesFile, line)) {
+        cout << line << endl;
+    }
+    salesFile.close();
+
 }
 void menu::showPizzas(){
     cout << left << setw(3) << " nr." << setw(NAME) << " nazwa " << right << setw(PRICE) << " cena " << left << "     " << setw(INGREDIENTS) << " skladniki "  << endl << endl;
@@ -128,14 +148,12 @@ void menu::showMenu(){
 
     while(shoudShopping){
 
-        cout << "--------------------------------------------\n";
-        cout << "Witamy w naszej Pizzeri!" << endl;
-        cout << "--------------------------------------------\n";
         cout << "1. Lista Pizz" << endl;
-        cout << "2. Lista napoji" << endl;
-        cout << "3. Lista zestawów" << endl;
-        cout << "4. Koszyk" << endl;
-        cout << "5. Wyjdz" << endl;
+        cout << "2. Lista napoi" << endl;
+        cout << "3. Lista zestawow" << endl;
+        cout << "4. Promocje" << endl;
+        cout << "5. Koszyk" << endl;
+        cout << "6. Wyjdz" << endl;
 
         cin >> clientChoose;
 
@@ -157,10 +175,24 @@ void menu::showMenu(){
                     cout << "Podaj ilosc: ";
                     cin >> howMuch;
                     cout << "Dodano do koszyka" << endl;
+                    shopingCard.addCardPizza(*pizzas[number-1],howMuch,false);
+
+                    if(shopingCard.check2PizzasFreeDrink() && !shopingCard.getSaleFreeDrink()){
+                        cout << "Promocja! Za zakup dwoch roznych pizz, dostajesz papsi gratis!" << endl;
+                        cout << "Chcesz skorzystac z promocji?" << endl;
+                        cout << "1.Tak" << endl << "2.Nie" << endl;
+                        cin >> clientChoose;
+                        if(clientChoose == 1 && (shopingCard.getSaleFifFif() || shopingCard.getSaleOff20()) ){
+                            cout << "PROMOCJE SIE NIE DODAJA!" << endl;
+                        }
+                        else if(clientChoose == 1 && !shopingCard.getSaleFifFif() && !shopingCard.getSaleOff20()){
+                            unsigned int darmowaKolka =1;
+                            shopingCard.setSaleFreeDrink(true);
+                            shopingCard.addCardDrink(*drinks[0],darmowaKolka,true);
+                        }
+                    }
                     system("PAUSE");
                     system("cls");
-
-                    shopingCard.addCardPizza(*pizzas[number-1],howMuch);
 
                     number=0;
                     howMuch=0;
@@ -189,7 +221,7 @@ void menu::showMenu(){
                     system("PAUSE");
                     system("cls");
 
-                    shopingCard.addCardDrink(*drinks[number-1],howMuch);
+                    shopingCard.addCardDrink(*drinks[number-1],howMuch,false);
 
                     number=0;
                     howMuch=0;
@@ -214,14 +246,33 @@ void menu::showMenu(){
                     cin >> number;
                     cout << "Podaj ilosc: ";
                     cin >> howMuch;
+
+                    shopingCard.addCardMeal(*meals[number-1],howMuch);
+                    system("PAUSE");
+                    system("cls");
+                    if(shopingCard.checkHalfMealPrice() && !shopingCard.getSaleFifFif()){
+                        cout << "Chcesz skorzystac z promocji 50/50?" << endl;
+                        cout << "1.Tak" << endl << "2.Nie" << endl;
+                        cin >> clientChoose;
+                        if(clientChoose == 1 && (shopingCard.getSaleFreeDrink() || shopingCard.getSaleOff20()) ){
+                            cout << "PROMOCJE SIE NIE DODAJA!" << endl;
+                        }
+                        else if(clientChoose == 1 && (!shopingCard.getSaleFreeDrink() && !shopingCard.getSaleOff20()) ){
+                            shopingCard.setSaleFifFif(true);
+                            this->showMeals();
+                            cout << "Wybierz trzeci zestaw o 50% tanszy" << endl;
+                            cin >> number;
+
+                            shopingCard.addCardMeal(*meals[number-1],1);
+                        }
+                    }
                     cout << "Dodano do koszyka" << endl;
                     system("PAUSE");
                     system("cls");
 
-                    shopingCard.addCardMeal(*meals[number-1],howMuch);
-
                     number=0;
                     howMuch=0;
+
                     break;
                 case 0:
 
@@ -229,25 +280,48 @@ void menu::showMenu(){
                 }
             }
             break;
-
         case 4:
-            shopingCard.showCard();
-            cout << "1. Zamawiam" << endl;
-            cout << "0. Powrot do menu" << endl;
-            cin >> clientChoose;
+            readSales();
+            system("PAUSE");
             system("cls");
-                                                     //zmien zamowienie????? dodajemY???
-            switch(clientChoose){
-            case 1:
-
-                shopingCard.showReceipt();
-                break;
-            case 0:
-
-                break;
-            }
             break;
         case 5:
+
+            while(clientChoose != 0){
+                if(shopingCard.checkCardPrice() && !shopingCard.getSaleOff20()){
+                    cout << "Przekroczono 100 zl!" << endl;
+                    cout << "Chcesz skorzystac z promocji -20%?" << endl;
+                    cout << "1.Tak" << endl << "2.Nie" << endl;
+                    cin >> clientChoose;
+                    if(clientChoose == 1 && (shopingCard.getSaleFreeDrink() || shopingCard.getSaleFifFif()) ){
+                        system("cls");
+                        cout << "PROMOCJE SIE NIE DODAJA!" << endl;
+                        system("PAUSE");
+                        system("cls");
+                    }
+                    else if(clientChoose == 1 && !shopingCard.getSaleFreeDrink() && !shopingCard.getSaleFifFif()){
+                        shopingCard.setSaleOff20(true);
+                    }
+                }
+                shopingCard.showCard();
+                cout << "1. Kupuje" << endl;
+                cout << "2. Wyczysc koszyk" << endl;
+                cout << "0. Powrot do menu" << endl;
+                cin >> clientChoose;
+                system("cls");
+                switch(clientChoose){
+                case 1:
+                    shopingCard.showReceipt();
+                    break;
+                case 2:
+                    shopingCard.clearCard();
+                    break;
+                case 0:
+                    break;
+                }
+            }
+            break;
+        case 6:
             shoudShopping = false;
             cout << "--------------------------------------------\n";
             cout << "Dziekujemy za zamowienie!" << endl;
